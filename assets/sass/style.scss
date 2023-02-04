@@ -1,10 +1,27 @@
+$terminal-white: rgb(244,244,244);
+@mixin pointer(){
+  content:"";
+  float: right;
+  display: inline-block;
+  background-color: $terminal-white;
+  width: 7px;
+  height: 15px;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body{
     background-color: rgb(30,30,30);
-    color: rgb(244,244,244);
+    color: $terminal-white;
     font-family: 'Inconsolata', monospace;
     .pointer{
         display: inline-block;
-        background-color: rgb(244,244,244);
+        background-color: $terminal-white;
         width: 7px;
         height: 15px;
         animation: blink-animation 1s steps(2, start) infinite;
@@ -18,12 +35,86 @@ body{
         text-align: center;
       }
     }
+    nav{
+      width: 100%;
+      display: flex;
+      border-bottom: rgba(244,244,244) solid 1px;
+      justify-content: flex-end;
+      a{
+        text-decoration: none;
+        padding: 1em 1.5em;
+        color: $terminal-white;
+        &::after{
+          content:"";
+          display: inline-block;
+        }
+        &.active{
+          &::after{
+            @include pointer();
+          }
+        }
+        &:visited{
+          color: $terminal-white;
+        }
+        &:hover{
+          &::after{
+            @include pointer();
+          }
+        }
+      }
+    }
+    
+    section.home-intro{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &>*{
+        text-align: center;
+      }
+      &>img{
+        flex-grow: 1;
+      }
+      &>div{
+        flex-grow: 2;
+      }
+    }
+
+    section.building{
+      display: flex;
+      align-items: center;
+      
+      p{
+        padding: 30px;
+        flex-grow: 1;
+      }
+      div{
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
+        flex-grow: 3;
+        a{
+          padding: 5px 10px;
+          margin: 20px 0;
+          color: $terminal-white;
+          text-decoration: none;
+          span{
+            display: none;
+          }
+          &:hover span{
+            display: inline-block;
+            
+          }
+        }
+      }
+    }
+    
 }
 
 .scale-out-horizontal {
 	-webkit-animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	        animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
 
 @keyframes blink-animation {
     to {

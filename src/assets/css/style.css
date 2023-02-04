@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #1e1e1e;
   color: #f4f4f4;
@@ -18,6 +24,82 @@ body #welcome-container {
 }
 body #welcome-container > div {
   text-align: center;
+}
+body nav {
+  width: 100%;
+  display: flex;
+  border-bottom: #f4f4f4 solid 1px;
+  justify-content: flex-end;
+}
+body nav a {
+  text-decoration: none;
+  padding: 1em 1.5em;
+  color: #f4f4f4;
+}
+body nav a::after {
+  content: "";
+  display: inline-block;
+}
+body nav a.active::after {
+  content: "";
+  float: right;
+  display: inline-block;
+  background-color: #f4f4f4;
+  width: 7px;
+  height: 15px;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+body nav a:visited {
+  color: #f4f4f4;
+}
+body nav a:hover::after {
+  content: "";
+  float: right;
+  display: inline-block;
+  background-color: #f4f4f4;
+  width: 7px;
+  height: 15px;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+body section.home-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body section.home-intro > * {
+  text-align: center;
+}
+body section.home-intro > img {
+  flex-grow: 1;
+}
+body section.home-intro > div {
+  flex-grow: 2;
+}
+body section.building {
+  display: flex;
+  align-items: center;
+}
+body section.building p {
+  padding: 30px;
+  flex-grow: 1;
+}
+body section.building div {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  flex-grow: 3;
+}
+body section.building div a {
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+body section.building div a span {
+  display: none;
+}
+body section.building div a:hover span {
+  display: inline-block;
 }
 
 .scale-out-horizontal {
