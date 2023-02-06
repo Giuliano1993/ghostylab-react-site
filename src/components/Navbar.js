@@ -4,6 +4,7 @@ import Home from './Home'
 import About from './About'
 import Projects from './Projects'
 import Contact from './Contact'
+import CommandLine from './CommandLine'
 const Navbar = ()=>{
   return (
     <>
@@ -27,6 +28,7 @@ const Navbar = ()=>{
         <Route path='/projects' element={<Projects/>} />
         <Route path='/contact' element={<Contact/>} />
     </Routes>
+    <CommandLine></CommandLine>
   </>
   )
 }
