@@ -1,4 +1,5 @@
 $terminal-white: rgb(244,244,244);
+$terminal-green: rgb(20, 210, 118);
 @mixin pointer(){
   content:"";
   float: right;
@@ -15,10 +16,33 @@ $terminal-white: rgb(244,244,244);
   margin: 0;
   box-sizing: border-box;
 }
+.aboutText{
+  width: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+  p{
+    &>b{
+      /* color: rgb(25,156,92); */
+      color: $terminal-green
+    }
+  }
+}
 body{
     background-color: rgb(30,30,30);
     color: $terminal-white;
     font-family: 'Inconsolata', monospace;
+    .container{
+      width:90%;
+      max-width: 1024px;
+      margin:0 auto;
+    }
+    #terminalEditor{
+      max-height:200px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
     .pointer{
         display: inline-block;
         background-color: $terminal-white;
@@ -26,13 +50,24 @@ body{
         height: 15px;
         animation: blink-animation 1s steps(2, start) infinite;
     }
-    #welcome-container{
+    #welcome-container,
+    #projects-container{
       display: flex;
       align-items: center;
       height: 100vh;
       justify-content: center;
       &>div{
         text-align: center;
+      }
+    }
+    #projects-container>div{
+      display: flex;
+      span{
+        font-size: 2rem;
+        &.pointer{
+          height:2rem;
+          background-color:$terminal-green
+        }
       }
     }
     .intro-titles{
@@ -97,7 +132,11 @@ body{
         text-align: center;
       }
       &>img{
-        flex-grow: 1;
+        flex-basis: 25%;
+        filter:grayscale(100%);
+        border-radius:30px;
+        margin: 10px;
+
       }
       &>div{
         flex-grow: 2;
@@ -110,13 +149,15 @@ body{
       
       p{
         padding: 30px;
-        flex-grow: 1;
+        flex-basis:50%;
+        flex-grow:1;
       }
       div{
         display: flex;
-        flex-direction: column;
-        align-items: space-around;
-        flex-grow: 3;
+        flex-direction: row;
+        align-items: space-between;
+        flex-grow:1;
+        flex-basis:50%;
         a{
           padding: 5px 10px;
           margin: 20px 0;

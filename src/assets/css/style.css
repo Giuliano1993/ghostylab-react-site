@@ -4,10 +4,32 @@
   box-sizing: border-box;
 }
 
+.aboutText {
+  width: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.aboutText p > b {
+  /* color: rgb(25,156,92); */
+  color: #14d276;
+}
+
 body {
   background-color: #1e1e1e;
   color: #f4f4f4;
   font-family: "Inconsolata", monospace;
+}
+body .container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+body #terminalEditor {
+  max-height: 200px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 body .pointer {
   display: inline-block;
@@ -16,14 +38,26 @@ body .pointer {
   height: 15px;
   animation: blink-animation 1s steps(2, start) infinite;
 }
-body #welcome-container {
+body #welcome-container,
+body #projects-container {
   display: flex;
   align-items: center;
   height: 100vh;
   justify-content: center;
 }
-body #welcome-container > div {
+body #welcome-container > div,
+body #projects-container > div {
   text-align: center;
+}
+body #projects-container > div {
+  display: flex;
+}
+body #projects-container > div span {
+  font-size: 2rem;
+}
+body #projects-container > div span.pointer {
+  height: 2rem;
+  background-color: #14d276;
 }
 body .intro-titles h3 {
   color: #999999;
@@ -93,7 +127,10 @@ body section.home-intro > * {
   text-align: center;
 }
 body section.home-intro > img {
-  flex-grow: 1;
+  flex-basis: 25%;
+  filter: grayscale(100%);
+  border-radius: 30px;
+  margin: 10px;
 }
 body section.home-intro > div {
   flex-grow: 2;
@@ -104,13 +141,15 @@ body section.building {
 }
 body section.building p {
   padding: 30px;
+  flex-basis: 50%;
   flex-grow: 1;
 }
 body section.building div {
   display: flex;
-  flex-direction: column;
-  align-items: space-around;
-  flex-grow: 3;
+  flex-direction: row;
+  align-items: space-between;
+  flex-grow: 1;
+  flex-basis: 50%;
 }
 body section.building div a {
   padding: 5px 10px;

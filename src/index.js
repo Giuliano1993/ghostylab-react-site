@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import Intro from './components/Intro';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
+import { TerminalContextProvider } from "react-terminal";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <TerminalContextProvider>
     <Router>
         <Intro />
     </Router>
+    </TerminalContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

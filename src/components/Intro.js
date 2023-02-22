@@ -59,13 +59,13 @@ const Intro = () => {
       <div id="welcome-container">
         <div>
           <span id="welcomeText"></span>
-          {/*<span className="pointer"></span>*/}
+          <span className="pointer"></span>
         </div>
       </div>
     );
   } else {
     return (
-        <Navbar></Navbar>       
+        <Navbar></Navbar>
     )
 
   } 

@@ -6,6 +6,7 @@ import Projects from './Projects'
 import Contact from './Contact'
 import CommandLine from './CommandLine'
 const Navbar = ()=>{
+  
   return (
     <>
     <nav className="navbar is-primary" role="navigation">
@@ -28,6 +29,7 @@ const Navbar = ()=>{
         <Route path='/projects' element={<Projects/>} />
         <Route path='/contact' element={<Contact/>} />
     </Routes>
+    {/* <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/> */}
     <CommandLine></CommandLine>
   </>
   )
