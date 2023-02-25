@@ -18,8 +18,8 @@ $terminal-green: rgb(20, 210, 118);
 }
 .aboutText{
   width: 50%;
-  margin-left: 10px;
-  margin-top: 10px;
+  /*margin-left: 10px;
+  margin-top: 10px;*/
   p{
     &>b{
       /* color: rgb(25,156,92); */
@@ -49,6 +49,42 @@ body{
         width: 7px;
         height: 15px;
         animation: blink-animation 1s steps(2, start) infinite;
+    }
+    .about-page{
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 2rem;
+      &>div>h2{
+        margin-bottom: 1rem;
+      }
+    }
+    #skills{
+      flex-basis: 30%;
+      h2{
+        text-align: right;
+      }
+      .skill-box{
+        display:flex;
+        align-items: center;
+        div{
+          &.skill-left-fill,
+          &.skill-right-fill{
+            background-color: $terminal-white;
+            flex-basis: 40%;
+            height: 1rem;
+            
+          }
+          &:first-child,&:last-child{
+            font-size: 2rem;
+            padding-bottom: 8px;
+          }
+          &.skill-text{
+            padding-left: 10px;
+            padding-right: 10px;
+            color: $terminal-green;
+          }
+        }
+      }
     }
     #welcome-container,
     #projects-container{

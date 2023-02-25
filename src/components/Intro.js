@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/style.css'
-import Navbar from './Navbar'
+import Navbar from './Navbar.tsx'
 import { useLocation } from 'react-router-dom'
 
 const Intro = () => {

@@ -21,12 +21,13 @@ const Projects = () => {
       var speed = 100;
       for (let i = 0; i < text.length; i++) {
         let el = document.getElementById('comingSoonText')
+        if(!el) throw new Error('Could not find element')
         let html = el.innerHTML;
         el.innerHTML = html + text.charAt(i);
         await delay(speed)
       }
-      var html = document.getElementById('comingSoonText').innerHTML;
-      document.getElementById('comingSoonText').innerHTML = html + '<br>';
+      var html = document.getElementById('comingSoonText')!.innerHTML;
+      document.getElementById('comingSoonText')!.innerHTML = html + '<br>';
     } catch (err) {
       console.error(err)
     }

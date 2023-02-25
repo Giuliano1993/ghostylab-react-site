@@ -6,8 +6,8 @@
 
 .aboutText {
   width: 50%;
-  margin-left: 10px;
-  margin-top: 10px;
+  /*margin-left: 10px;
+  margin-top: 10px;*/
 }
 .aboutText p > b {
   /* color: rgb(25,156,92); */
@@ -37,6 +37,38 @@ body .pointer {
   width: 7px;
   height: 15px;
   animation: blink-animation 1s steps(2, start) infinite;
+}
+body .about-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
+body .about-page > div > h2 {
+  margin-bottom: 1rem;
+}
+body #skills {
+  flex-basis: 30%;
+}
+body #skills h2 {
+  text-align: right;
+}
+body #skills .skill-box {
+  display: flex;
+  align-items: center;
+}
+body #skills .skill-box div.skill-left-fill, body #skills .skill-box div.skill-right-fill {
+  background-color: #f4f4f4;
+  flex-basis: 40%;
+  height: 1rem;
+}
+body #skills .skill-box div:first-child, body #skills .skill-box div:last-child {
+  font-size: 2rem;
+  padding-bottom: 8px;
+}
+body #skills .skill-box div.skill-text {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #14d276;
 }
 body #welcome-container,
 body #projects-container {

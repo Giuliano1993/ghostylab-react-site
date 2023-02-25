@@ -5,8 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
 import { TerminalContextProvider } from "react-terminal";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootEl =  document.getElementById('root')
+if(!rootEl) {throw new Error("Must be an element");
+}
+const root = ReactDOM.createRoot(rootEl);
 root.render(
     <TerminalContextProvider>
     <Router>

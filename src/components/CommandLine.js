@@ -17,7 +17,30 @@ const CommandLine = () => {
         <p><b>CD </b> prompt:  go to this page</p>
         <p><b>ls </b>: lists the available paths</p>
         <p><b>clear </b>: empty the terminal</p>
+        <p><b>skills </b>: show a short list of my skills</p>
+      </div>,
+    skills: <div>
+      <div>
+        <div>[php]</div>
+        <div>[laravel]</div>
+        <div>[symfony]</div>
+        {/* <div>
+          +-------------------------+<br/>
+          |          Hello          |<br/>
+          +-------------------------+<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          |                         |<br/>
+          +-------------------------+
+          </div> */}
       </div>
+    </div>
   };
   return(
     <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/>

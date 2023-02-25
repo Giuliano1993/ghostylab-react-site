@@ -1,9 +1,9 @@
 import React  from "react";
 import { NavLink, Routes, Route } from "react-router-dom";
-import Home from './Home'
-import About from './About'
-import Projects from './Projects'
-import Contact from './Contact'
+import Home from './Home.tsx'
+import About from './About.tsx'
+import Projects from './Projects.tsx'
+import Contact from './Contact.tsx'
 import CommandLine from './CommandLine'
 const Navbar = ()=>{
   
