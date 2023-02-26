@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ReactTerminal } from "react-terminal";
 import { skills } from "./About.tsx";
+import axios from "axios";
+import { Suspense } from "react";
 const CommandLine = () => {
   const navigate  = useNavigate();
 
@@ -19,7 +21,13 @@ const CommandLine = () => {
       <p>projects</p>
       <p>contact</p>
     </div>,
-    
+    pokemon: async (pokemon)=>{
+      const poke = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((res)=>{
+        console.log(res.data)
+        return res.data
+      })
+      return <div>{poke.name}</div>
+    },
     help: <div>
         <p><b>CD </b> prompt:  go to this page</p>
         <p><b>ls </b>: lists the available paths</p>

@@ -25,10 +25,22 @@ const Home = () => {
           </p>
           <div>
             <NavLink className="navbar-item" to="/projects" >
-              Check the projects out<span className="pointer"></span>
+              <div>+----------------------------+</div>
+              <div>
+                <p className="side">|</p>
+                <p>Check the projects<span className="pointer"></span></p>
+                <p className="side">|</p>
+              </div>
+              <div>+----------------------------+</div>
             </NavLink>
             <NavLink className="navbar-item" to="/contact" >
-              Contact me <span className="pointer"></span>
+              <div>+-----------------------+</div>
+              <div>
+                <p className="side">|</p>
+                <p>Contact me<span className="pointer"></span></p>
+                <p className="side">|</p>
+              </div>
+              <div>+-----------------------+</div>
             </NavLink>
           </div>
         </section>

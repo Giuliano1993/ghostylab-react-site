@@ -225,7 +225,7 @@ body{
       div{
         display: flex;
         flex-direction: row;
-        align-items: space-between;
+        justify-content: space-around;
         flex-grow:1;
         flex-basis:50%;
         a{
@@ -233,6 +233,29 @@ body{
           margin: 20px 0;
           color: $terminal-white;
           text-decoration: none;
+          div{
+            display:block;
+            &:nth-child(2){
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              width: 100%;
+              p{
+                padding: 0;
+                &:not(.side){
+                  flex-basis: 99%;
+                  flex-grow: 2;
+                  text-align: center;
+                }
+                &.side{
+                  flex-shrink: 2;
+                }
+                &.side:last-child{
+                  text-align: right;
+                }
+              }
+            }
+          }
           span{
             display: none;
           }
