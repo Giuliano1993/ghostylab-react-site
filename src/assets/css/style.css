@@ -103,6 +103,9 @@ body #welcome-container > div,
 body #projects-container > div {
   text-align: center;
 }
+body #welcome-container {
+  height: 100vh;
+}
 body #projects-container > div {
   display: flex;
 }

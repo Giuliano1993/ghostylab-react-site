@@ -56,7 +56,7 @@ const Intro = () => {
 
   if (!introduced && location.pathname === '/') {
     return (
-      <div id="welcome-container">
+      <div id="welcome-container" className="container">
         <div>
           <span id="welcomeText"></span>
           <span className="pointer"></span>
