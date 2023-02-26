@@ -19,13 +19,14 @@ $terminal-black: rgb(30,30,30);
 }
 .aboutText{
   width: 50%;
-  /*margin-left: 10px;
-  margin-top: 10px;*/
   p{
     &>b{
-      /* color: rgb(25,156,92); */
       color: $terminal-green
     }
+  }
+  h2{
+    margin: 1rem 0;
+    color: $terminal-green;
   }
 }
 body{
@@ -60,7 +61,7 @@ body{
       }
     }
     #skills{
-      flex-basis: 30%;
+      flex-basis: 35%;
       h2{
         text-align: right;
       }

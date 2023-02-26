@@ -6,11 +6,12 @@
 
 .aboutText {
   width: 50%;
-  /*margin-left: 10px;
-  margin-top: 10px;*/
 }
 .aboutText p > b {
-  /* color: rgb(25,156,92); */
+  color: #14d276;
+}
+.aboutText h2 {
+  margin: 1rem 0;
   color: #14d276;
 }
 
@@ -47,7 +48,7 @@ body .about-page > div > h2 {
   margin-bottom: 1rem;
 }
 body #skills {
-  flex-basis: 30%;
+  flex-basis: 35%;
 }
 body #skills h2 {
   text-align: right;

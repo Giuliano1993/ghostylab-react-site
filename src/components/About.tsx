@@ -14,17 +14,19 @@ const SkillBox = (props)=>{
     </div>
   )
 }
+
+const skills = [
+  "Php",
+  "Laravel",
+  "Symfony",
+  "Wordpress",
+  "Javascript",
+  "React",
+  "Vue",
+  "Python"
+]; 
 const About = () => {
 
-  const skills = [
-    "Php",
-    "Laravel",
-    "Symfony",
-    "Javascript",
-    "React",
-    "Vue",
-    "Python"
-  ];
 
   const skillsRows: JSX.Element[] = []
 
@@ -37,13 +39,16 @@ const About = () => {
       <div className="aboutText">
         <h2>Hello there</h2>
         <p>Hi, I'm <b>Giuliano</b> and I'm a <b>freelance full stack web developer</b> based in Rome.</p>
-        <p>I learnt coding when I was a young kid, just for play and have fun. As my love for code dates so back, I still love coding as much as a kid loves playing with costructions: I love <b>building things</b>, see them coming to <b>life</b>.</p>
-        <p>I develop <b>websites and web apps as well as command line tools</b> useful for server management and more complex tasks.</p>
-        <p>I love taking care of the whole process, from design to deploy, and this allows me to have a deep knowledge and understanding of the project I'm working on.</p>
+        <p>I learnt coding when I was a young kid, just for play and have fun. As my love for coding dates so back, I still enjoy it as much as a kid have fun playing with Legos:</p> 
+        <p>I love <b>building things</b>, see them coming to <b>life</b>.</p>
+        <p>I develop <b>websites, web apps as well as command line tools</b> useful for server management and more complex tasks.</p>
+        <p>Creating from zero or adding new features, in any case I'm always up for a <b>challenge</b></p>
+        <h2>So, what have you got for me to <b>build</b>? ;) </h2>
 
       </div>
       <div id="skills">
-        <h2>Some of my skills</h2>
+        {/* <h2>Some of my skills</h2> */}
+        <h2>Some of the things I'm good at:</h2>
         {skillsRows}
         {/* 
           PHP
@@ -60,7 +65,7 @@ const About = () => {
   )
 }
 
-export default About;
+export {About, SkillBox, skills};
 
 
 

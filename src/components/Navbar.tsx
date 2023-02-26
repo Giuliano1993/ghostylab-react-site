@@ -1,7 +1,7 @@
 import React  from "react";
 import { NavLink, Routes, Route } from "react-router-dom";
 import Home from './Home.tsx'
-import About from './About.tsx'
+import {About} from './About.tsx'
 import Projects from './Projects.tsx'
 import Contact from './Contact.tsx'
 import CommandLine from './CommandLine'

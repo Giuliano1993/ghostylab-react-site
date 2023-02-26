@@ -1,7 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { ReactTerminal } from "react-terminal";
+import { skills } from "./About.tsx";
 const CommandLine = () => {
   const navigate  = useNavigate();
+
+  const skillsRows = []
+  skills.forEach((el)=>{
+    skillsRows.push(<div>{el}</div>);
+  })
+
   const commands = {
     whoami: "jackharper",
     //cd: (directory) => `changed path to ${directory}`
@@ -21,9 +28,7 @@ const CommandLine = () => {
       </div>,
     skills: <div>
       <div>
-        <div>[php]</div>
-        <div>[laravel]</div>
-        <div>[symfony]</div>
+        {skillsRows}
         {/* <div>
           +-------------------------+<br/>
           |          Hello          |<br/>
