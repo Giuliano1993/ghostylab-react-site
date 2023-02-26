@@ -56,10 +56,28 @@ body #skills .skill-box {
   display: flex;
   align-items: center;
 }
+body #skills .skill-box:hover .skill-left-fill::after {
+  left: 0;
+  background-color: #1e1e1e;
+  animation: left-to-right 1s;
+}
+body #skills .skill-box:hover .skill-right-fill::after {
+  right: 0;
+  background-color: #1e1e1e;
+  animation: right-to-left 1s;
+}
 body #skills .skill-box div.skill-left-fill, body #skills .skill-box div.skill-right-fill {
   background-color: #f4f4f4;
   flex-basis: 40%;
   height: 1rem;
+  position: relative;
+}
+body #skills .skill-box div.skill-left-fill::after, body #skills .skill-box div.skill-right-fill::after {
+  content: "";
+  height: 1rem;
+  position: absolute;
+  width: 5px;
+  background-color: transparent;
 }
 body #skills .skill-box div:first-child, body #skills .skill-box div:last-child {
   font-size: 2rem;
@@ -239,6 +257,22 @@ body section.building div a:hover span {
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     opacity: 1;
+  }
+}
+@keyframes left-to-right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes right-to-left {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 100%;
   }
 }
 

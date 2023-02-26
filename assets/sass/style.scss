@@ -1,5 +1,6 @@
 $terminal-white: rgb(244,244,244);
 $terminal-green: rgb(20, 210, 118);
+$terminal-black: rgb(30,30,30);
 @mixin pointer(){
   content:"";
   float: right;
@@ -66,14 +67,34 @@ body{
       .skill-box{
         display:flex;
         align-items: center;
+        &:hover{
+          .skill-left-fill::after{
+            left: 0;
+            background-color:  $terminal-black;
+            animation: left-to-right 1s;
+          }
+          .skill-right-fill::after{
+            right: 0;
+            background-color:  $terminal-black;
+            animation: right-to-left 1s;
+          }
+        } 
         div{
           &.skill-left-fill,
           &.skill-right-fill{
             background-color: $terminal-white;
             flex-basis: 40%;
             height: 1rem;
-            
+            position: relative;
+            &::after{
+              content: "";
+              height: 1rem;
+              position: absolute;
+              width:5px;
+              background-color: transparent;
+            }
           }
+          
           &:first-child,&:last-child{
             font-size: 2rem;
             padding-bottom: 8px;
@@ -258,5 +279,22 @@ body{
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
     opacity: 1;
+  }
+}
+
+@keyframes left-to-right{
+  0%{
+    left:0
+  }
+  100%{
+    left:100%
+  }
+}
+@keyframes right-to-left{
+  0%{
+    right:0
+  }
+  100%{
+    right:100%
   }
 }
