@@ -22,8 +22,14 @@ body {
 }
 body .container {
   width: 90%;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 251px);
+}
+body .container#home {
+  flex-direction: column;
 }
 body #terminalEditor {
   max-height: 200px;
@@ -91,9 +97,6 @@ body #skills .skill-box div.skill-text {
 }
 body #welcome-container,
 body #projects-container {
-  display: flex;
-  align-items: center;
-  height: 100vh;
   justify-content: center;
 }
 body #welcome-container > div,
@@ -148,6 +151,9 @@ body nav a::after {
   content: "";
   display: inline-block;
 }
+body nav a.active {
+  color: #14d276 !important;
+}
 body nav a.active::after {
   content: "";
   float: right;
@@ -173,11 +179,15 @@ body section.home-intro {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
-body section.home-intro > * {
+body section.home-intro > div {
+  width: 50%;
+}
+body section.home-intro * {
   text-align: center;
 }
-body section.home-intro > img {
+body section.home-intro img {
   flex-basis: 25%;
   filter: grayscale(100%);
   border-radius: 30px;

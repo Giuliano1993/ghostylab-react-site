@@ -6,9 +6,11 @@ const Home = () => {
  
   return(
     <>
-    <div className="container">
+    <div id="home" className="container">
         <section className="home-intro">
-          <img src={photo} width="200px" alt="Giuliano"/>
+          <div>
+            <img src={photo} width="200px" alt="Giuliano"/>
+          </div>
           <div className="intro-titles">
             <h1>Hi! This is Giuliano</h1>
             <h2>I develop stuff for the web</h2>

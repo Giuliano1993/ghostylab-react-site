@@ -2,7 +2,7 @@ import React from "react";
 import '../assets/css/style.css';
 
 
-const SkillBox = (props)=>{
+export const SkillBox = (props)=>{
 
   return(
     <div className="skill-box">
@@ -15,7 +15,7 @@ const SkillBox = (props)=>{
   )
 }
 
-const skills = [
+export const skills = [
   "Php",
   "Laravel",
   "Symfony",
@@ -25,7 +25,7 @@ const skills = [
   "Vue",
   "Python"
 ]; 
-const About = () => {
+export const About = () => {
 
 
   const skillsRows: JSX.Element[] = []
@@ -34,7 +34,7 @@ const About = () => {
     skillsRows.push(<SkillBox skill={el}></SkillBox>);
   })
   return(
-    <div className="about-page">
+    <div className="about-page container">
 
       <div className="aboutText">
         <h2>Hello there</h2>
@@ -65,7 +65,7 @@ const About = () => {
   )
 }
 
-export {About, SkillBox, skills};
+//export {About, SkillBox, skills};
 
 
 

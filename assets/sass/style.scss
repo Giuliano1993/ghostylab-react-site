@@ -35,9 +35,16 @@ body{
     font-family: 'Inconsolata', monospace;
     .container{
       width:90%;
-      max-width: 1024px;
+      max-width: 1200px;
       margin:0 auto;
+      display: flex;
+      align-items: center;
+      height: calc(100vh - 251px);
+      &#home{
+        flex-direction: column;
+      }
     }
+    
     #terminalEditor{
       max-height:200px;
       position: fixed;
@@ -110,9 +117,6 @@ body{
     }
     #welcome-container,
     #projects-container{
-      display: flex;
-      align-items: center;
-      height: 100vh;
       justify-content: center;
       &>div{
         text-align: center;
@@ -167,6 +171,7 @@ body{
           display: inline-block;
         }
         &.active{
+          color: $terminal-green!important;
           &::after{
             @include pointer();
           }
@@ -186,10 +191,14 @@ body{
       display: flex;
       flex-direction: row;
       align-items: center;
-      &>*{
+      width: 100%;
+      &>div{
+        width: 50%;
+      }
+      & *{
         text-align: center;
       }
-      &>img{
+      & img{
         flex-basis: 25%;
         filter:grayscale(100%);
         border-radius:30px;

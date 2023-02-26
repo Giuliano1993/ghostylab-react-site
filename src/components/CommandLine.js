@@ -6,7 +6,7 @@ const CommandLine = () => {
 
   const skillsRows = []
   skills.forEach((el)=>{
-    skillsRows.push(<div>{el}</div>);
+    skillsRows.push(<div key={el}>{el}</div>);
   })
 
   const commands = {

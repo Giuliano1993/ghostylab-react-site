@@ -34,7 +34,7 @@ const Projects = () => {
   }
 
   return (
-    <div id="projects-container">
+    <div id="projects-container" className="container">
       <div>
         <span id="comingSoonText"></span>
         <span className="pointer"></span>

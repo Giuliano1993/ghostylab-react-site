@@ -23,6 +23,7 @@ const Navbar = ()=>{
         Contact
       </NavLink>
     </nav>
+    
     <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
