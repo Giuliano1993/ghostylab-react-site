@@ -317,14 +317,25 @@ body section.building div a:hover span {
   display: inline-block;
 }
 
+.d-lg-none {
+  display: none;
+}
+
 .scale-out-horizontal {
   -webkit-animation: scale-out-horizontal 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: scale-out-horizontal 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1330px) {
+  .d-lg-none {
+    display: inline;
+  }
+
   #home .building {
     flex-direction: column;
+  }
+  #home .building > p {
+    text-align: center;
   }
 }
 @keyframes blink-animation {
