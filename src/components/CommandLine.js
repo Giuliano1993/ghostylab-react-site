@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { ReactTerminal } from "react-terminal";
 import { skills } from "./About.tsx";
 import axios from "axios";
-import { Suspense } from "react";
 const CommandLine = () => {
   const navigate  = useNavigate();
 
