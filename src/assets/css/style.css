@@ -31,6 +31,72 @@ body .container {
 body .container#home {
   flex-direction: column;
 }
+body #contacts form {
+  flex-grow: 1;
+}
+body #contacts form > div {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+body #contacts form > div div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+body #contacts form > div div textarea {
+  resize: vertical;
+  height: 136px;
+}
+body #contacts form > div div input, body #contacts form > div div textarea {
+  flex-grow: 1;
+  margin-top: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: #f4f4f4;
+  font-family: "Inconsolata", monospace;
+  border-bottom: 1px solid #f4f4f4;
+}
+body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible {
+  outline: 0;
+  border-bottom: 1px solid #14d276;
+}
+body #contacts form > div div input::-webkit-scrollbar, body #contacts form > div div textarea::-webkit-scrollbar {
+  background-color: #f4f4f4;
+}
+body #contacts form > div div input::-webkit-scrollbar-button, body #contacts form > div div textarea::-webkit-scrollbar-button {
+  background-color: #f4f4f4;
+}
+body #contacts form > div div input::-webkit-scrollbar-track, body #contacts form > div div textarea::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+  border: 1px solid #14d276;
+}
+body #contacts form > div div input::-webkit-scrollbar-track-piece, body #contacts form > div div textarea::-webkit-scrollbar-track-piece {
+  background-color: #1e1e1e;
+  border: 1px solid #14d276;
+}
+body #contacts form > div div input::-webkit-scrollbar-thumb, body #contacts form > div div textarea::-webkit-scrollbar-thumb {
+  background-color: #14d276;
+}
+body #contacts form > div div input::-webkit-scrollbar-corner, body #contacts form > div div textarea::-webkit-scrollbar-corner {
+  background-color: #1e1e1e;
+}
+body #contacts form > div div input::-webkit-resizer, body #contacts form > div div textarea::-webkit-resizer {
+  background-color: #1e1e1e;
+}
+body #contacts form > div div button {
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "Inconsolata", monospace;
+  border: 1px solid white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 body #terminalEditor {
   max-height: 200px;
   position: fixed;
@@ -251,11 +317,27 @@ body section.building div a:hover span {
   display: inline-block;
 }
 
+.d-lg-none {
+  display: none;
+}
+
 .scale-out-horizontal {
   -webkit-animation: scale-out-horizontal 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: scale-out-horizontal 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
+@media screen and (max-width: 1330px) {
+  .d-lg-none {
+    display: inline;
+  }
+
+  #home .building {
+    flex-direction: column;
+  }
+  #home .building > p {
+    text-align: center;
+  }
+}
 @keyframes blink-animation {
   to {
     visibility: hidden;
