@@ -1,6 +1,5 @@
 import React from "react";
 import photo from  '../assets/pics/thisisme.jpeg'
-import { NavLink } from 'react-router-dom'
 import TerminalButton from "./elements/TerminalButton.tsx";
 
 const Home = () => { 
@@ -27,24 +26,6 @@ const Home = () => {
           <div>
             <TerminalButton href="/projects"  text="Check the projects"></TerminalButton>
             <TerminalButton href="/contact"  text="Contact me"></TerminalButton>
-            {/* <NavLink className="navbar-item" to="/projects" >
-              <div>+--------------------------+</div>
-              <div>
-                <p className="side">|</p>
-                <p>Check the projects<span className="pointer"></span></p>
-                <p className="side">|</p>
-              </div>
-              <div>+--------------------------+</div>
-            </NavLink>
-            <NavLink className="navbar-item" to="/contact" >
-              <div>+--------------------+</div>
-              <div>
-                <p className="side">|</p>
-                <p>Contact me<span className="pointer"></span></p>
-                <p className="side">|</p>
-              </div>
-              <div>+--------------------+</div>
-            </NavLink> */}
           </div>
         </section>
     </div>
