@@ -37,42 +37,25 @@ export default function SnakeGame(){
         context.fillStyle = "blue"
         //context.fillRect(snake.x,snake.y,snake.width,snake.height)
         snake.positions.forEach(position => {
-          context.fillRect(position.x,position.y,snake.width,snake.height)
+          context.fillRect(position.get('x'),position.get('y'),snake.width,snake.height)
         });
         if(food){
           context.fillStyle = "yellow";
           context.fillRect(food.x,food.y,baseSquareSize,baseSquareSize);
         }
-        //snake.move(direction)
+
         
         snake.movewhwole(direction)
       
-        snake.updateDirections(direction)
+        
         
         if(checkCollision(snake.positions[0],food)){
           count++;
           console.log(count+'!!!')
           food = createFood(context)
-          snake.grow()
+          snake.grow(direction)
         }
-        /*snake.positions.forEach((el)=>{
-          if(checkCollision(el,food)){
-            count++;
-            console.log(count+'!!!')
-            snake.grow(direction)
-            food = createFood(context)
-            console.log(food)
-            console.log(snake)
-
-          }
-        })*/
-        /*if(checkCollision(snake,food)){
-          count++;
-          console.log(count+'!!!')
-          snake.grow()
-          food = createFood(context)
-          console.log(food)
-        }*/
+       
       },frame)
       
     },[]
@@ -94,10 +77,11 @@ export default function SnakeGame(){
   //check collision between two enntities
   // TODO: improve collision mechanism
   const checkCollision = (entity1, entity2)=>{
-    if(entity1.x > entity2.x &&  
-      entity1.x < entity2.x + entity2.width && 
-      entity1.y > entity2.y &&
-      entity1.y < entity2.y + entity2.height){
+
+    if(entity1.get('x') > entity2.x &&  
+      entity1.get('x') < entity2.x + entity2.width && 
+      entity1.get('y') > entity2.y &&
+      entity1.get('y') < entity2.y + entity2.height){
         return true
       }
       return false
