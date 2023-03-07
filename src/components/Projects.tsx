@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-
+import SnakeGame from "./snake/SnakeGame";
 const Projects = () => {
   const delay = ms => new Promise(res => setTimeout(res, ms));
   useEffect(()=>{
-    write()
+    //write()
   })
 
 
@@ -35,10 +35,11 @@ const Projects = () => {
 
   return (
     <div id="projects-container" className="container">
-      <div>
+      {/* <div>
         <span id="comingSoonText"></span>
         <span className="pointer"></span>
-      </div>
+      </div> */}
+      <SnakeGame></SnakeGame>
     </div>
   )
 }
