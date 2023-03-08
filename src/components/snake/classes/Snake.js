@@ -17,9 +17,6 @@ export default class Snake extends Entity{
   grow(direction){
     
     let newPosition = new Map(this.positions[this.positions.length - 1])
-    console.log(this.positions)
-    console.log(direction)
-    
     switch(direction){
       case 'up':
         newPosition.set('y', this.positions[this.positions.length -1].get('y') + this.step)
@@ -33,12 +30,18 @@ export default class Snake extends Entity{
       case 'right':
         newPosition.set('x', this.positions[this.positions.length -1].get('x') - this.step)
         break;
+      default:
+        break;
     }
     this.positions.push(newPosition)
-    console.log(this.positions)
   }
 
   movewhwole(direction){
+    const vertMove = ['up','down'];
+    const orizMove = ['left','right'];
+
+    if(this.positions[0].get('direction') !== direction && 
+    ((vertMove.includes(this.positions[0].get('direction')) && vertMove.includes(direction)) || (orizMove.includes(this.positions[0].get('direction')) && orizMove.includes(direction)) || (!orizMove.includes(direction) && !vertMove.includes(direction)) )) direction = this.positions[0].get('direction')
     this.positions[0].set('direction',direction)
     let prevPosition = null;
     let nextPosition = null;
@@ -46,7 +49,7 @@ export default class Snake extends Entity{
       const element = this.positions[i];
       prevPosition = new Map(nextPosition)
       nextPosition = new Map(element)
-      if(i == 0){
+      if(i === 0){
         switch(element.get('direction')) {
           case 'up':
             this.positions[i].set('y', this.positions[i].get('y') - this.step);
@@ -60,6 +63,8 @@ export default class Snake extends Entity{
             break;
           case 'right':
             this.positions[i].set('x', this.positions[i].get('x') + this.step);
+            break;
+          default:
             break;
         } 
       }else{

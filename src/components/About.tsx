@@ -3,7 +3,11 @@ import '../assets/css/style.css';
 
 
 export const SkillBox = (props)=>{
-
+  // TODO : add dropdown alle skill, con stile ls alberato
+  // mostrando conoscenze relative tipo su php -> laravel, symfony, wordpress
+  // su js ->react e vue
+  // su css -> bootstrap, tailwind sass
+  // da ragionare :D 
   return(
     <div className="skill-box">
       <div>[</div>
