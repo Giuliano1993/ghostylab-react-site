@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
-import SnakeGame from "./snake/SnakeGame";
+
 const Projects = () => {
-  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
   useEffect(()=>{
-    //write()
+    write()
   })
 
 
-  
-  const writeEs8 = async (text) => {
+  const write = async () => {
+    var lines = [
+      "Coming Soon",
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      await writeEs8(lines[i])
+    }
+  }
+
+  const writeEs8 = async (text: string) => {
     try {
       var speed = 100;
       for (let i = 0; i < text.length; i++) {
