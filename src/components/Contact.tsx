@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useLocation } from "react-router-dom";
 
 const Contact = ()=>{
   const [formData, setFormData] = useState({
@@ -6,6 +7,10 @@ const Contact = ()=>{
     mail: '',
     message: ''
   })
+
+  const search = useLocation().search;
+  const success=new URLSearchParams(search).get("success");
+  console.log(success);//12345
 
   const handleData = e =>{
     setFormData({
@@ -35,6 +40,11 @@ const Contact = ()=>{
             <button type="submit">Send</button>
           </div>
         </div>
+        {success ? (
+        <div className="success-message">Thank you for contacting me. I will read your mail and contact you asap ;)</div>
+          ) 
+          : 
+          ("")}
       </form>
     </div>
   )

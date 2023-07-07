@@ -119,6 +119,12 @@ body{
             }
           }
         }
+        .success-message{
+          border: 1px solid $terminal-green;
+          color: $terminal-green;
+          text-align: center;
+          padding: 10px;
+        }
       }
     }
     #terminalEditor{
