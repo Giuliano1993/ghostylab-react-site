@@ -100,6 +100,12 @@ body #contacts form > div div button {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
+body #contacts form .success-message {
+  border: 1px solid rgb(20, 210, 118);
+  color: rgb(20, 210, 118);
+  text-align: center;
+  padding: 10px;
+}
 body #terminalEditor {
   max-height: 200px;
   position: fixed;
