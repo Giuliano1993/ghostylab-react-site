@@ -18,7 +18,7 @@ $terminal-black: rgb(30,30,30);
   box-sizing: border-box;
 }
 .aboutText{
-  width: 50%;
+  width: 60%;
   p{
     &>b{
       color: $terminal-green
@@ -42,6 +42,11 @@ body{
       height: calc(100vh - 251px);
       &#home{
         flex-direction: column;
+      }
+      &#error{
+        h2{
+          text-align: center;
+        }
       }
     }
     #contacts{

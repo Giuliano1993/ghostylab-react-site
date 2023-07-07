@@ -5,19 +5,19 @@
 }
 
 .aboutText {
-  width: 50%;
+  width: 60%;
 }
 .aboutText p > b {
-  color: #14d276;
+  color: rgb(20, 210, 118);
 }
 .aboutText h2 {
   margin: 1rem 0;
-  color: #14d276;
+  color: rgb(20, 210, 118);
 }
 
 body {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
+  background-color: rgb(30, 30, 30);
+  color: rgb(244, 244, 244);
   font-family: "Inconsolata", monospace;
 }
 body .container {
@@ -30,6 +30,9 @@ body .container {
 }
 body .container#home {
   flex-direction: column;
+}
+body .container#error h2 {
+  text-align: center;
 }
 body #contacts form {
   flex-grow: 1;
@@ -56,36 +59,36 @@ body #contacts form > div div input, body #contacts form > div div textarea {
   margin-top: 0.5rem;
   border: none;
   background-color: transparent;
-  color: #f4f4f4;
+  color: rgb(244, 244, 244);
   font-family: "Inconsolata", monospace;
-  border-bottom: 1px solid #f4f4f4;
+  border-bottom: 1px solid rgb(244, 244, 244);
 }
 body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible {
   outline: 0;
-  border-bottom: 1px solid #14d276;
+  border-bottom: 1px solid rgb(20, 210, 118);
 }
 body #contacts form > div div input::-webkit-scrollbar, body #contacts form > div div textarea::-webkit-scrollbar {
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
 }
 body #contacts form > div div input::-webkit-scrollbar-button, body #contacts form > div div textarea::-webkit-scrollbar-button {
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
 }
 body #contacts form > div div input::-webkit-scrollbar-track, body #contacts form > div div textarea::-webkit-scrollbar-track {
-  background-color: #1e1e1e;
-  border: 1px solid #14d276;
+  background-color: rgb(30, 30, 30);
+  border: 1px solid rgb(20, 210, 118);
 }
 body #contacts form > div div input::-webkit-scrollbar-track-piece, body #contacts form > div div textarea::-webkit-scrollbar-track-piece {
-  background-color: #1e1e1e;
-  border: 1px solid #14d276;
+  background-color: rgb(30, 30, 30);
+  border: 1px solid rgb(20, 210, 118);
 }
 body #contacts form > div div input::-webkit-scrollbar-thumb, body #contacts form > div div textarea::-webkit-scrollbar-thumb {
-  background-color: #14d276;
+  background-color: rgb(20, 210, 118);
 }
 body #contacts form > div div input::-webkit-scrollbar-corner, body #contacts form > div div textarea::-webkit-scrollbar-corner {
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
 }
 body #contacts form > div div input::-webkit-resizer, body #contacts form > div div textarea::-webkit-resizer {
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
 }
 body #contacts form > div div button {
   background: transparent;
@@ -106,7 +109,7 @@ body #terminalEditor {
 }
 body .pointer {
   display: inline-block;
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
   width: 7px;
   height: 15px;
   animation: blink-animation 1s steps(2, start) infinite;
@@ -131,16 +134,16 @@ body #skills .skill-box {
 }
 body #skills .skill-box:hover .skill-left-fill::after {
   left: 0;
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
   animation: left-to-right 1s;
 }
 body #skills .skill-box:hover .skill-right-fill::after {
   right: 0;
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
   animation: right-to-left 1s;
 }
 body #skills .skill-box div.skill-left-fill, body #skills .skill-box div.skill-right-fill {
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
   flex-basis: 40%;
   height: 1rem;
   position: relative;
@@ -159,7 +162,7 @@ body #skills .skill-box div:first-child, body #skills .skill-box div:last-child 
 body #skills .skill-box div.skill-text {
   padding-left: 10px;
   padding-right: 10px;
-  color: #14d276;
+  color: rgb(20, 210, 118);
 }
 body #welcome-container,
 body #projects-container {
@@ -180,23 +183,23 @@ body #projects-container > div span {
 }
 body #projects-container > div span.pointer {
   height: 2rem;
-  background-color: #14d276;
+  background-color: rgb(20, 210, 118);
 }
 body .intro-titles h3 {
-  color: #999999;
+  color: rgb(153, 153, 153);
 }
 body #command-line {
   width: 100%;
   height: 100px;
-  border-top: #f4f4f4 1px solid;
+  border-top: rgb(244, 244, 244) 1px solid;
   position: fixed;
   bottom: 0;
   left: 0;
 }
 body #command-line textarea {
   border: none;
-  background-color: #1e1e1e;
-  color: #f4f4f4;
+  background-color: rgb(30, 30, 30);
+  color: rgb(244, 244, 244);
   outline: none;
   font-family: "Inconsolata", monospace;
   font-size: 1em;
@@ -208,38 +211,38 @@ body #command-line textarea:focus, body #command-line textarea:active {
 body nav {
   width: 100%;
   display: flex;
-  border-bottom: #f4f4f4 solid 1px;
+  border-bottom: rgb(244, 244, 244) solid 1px;
   justify-content: flex-end;
 }
 body nav a {
   text-decoration: none;
   padding: 1em 1.5em;
-  color: #f4f4f4;
+  color: rgb(244, 244, 244);
 }
 body nav a::after {
   content: "";
   display: inline-block;
 }
 body nav a.active {
-  color: #14d276 !important;
+  color: rgb(20, 210, 118) !important;
 }
 body nav a.active::after {
   content: "";
   float: right;
   display: inline-block;
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
   width: 7px;
   height: 15px;
   animation: blink-animation 1s steps(2, start) infinite;
 }
 body nav a:visited {
-  color: #f4f4f4;
+  color: rgb(244, 244, 244);
 }
 body nav a:hover::after {
   content: "";
   float: right;
   display: inline-block;
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
   width: 7px;
   height: 15px;
   animation: blink-animation 1s steps(2, start) infinite;
@@ -284,7 +287,7 @@ body section.building div {
 body section.building div a {
   padding: 5px 10px;
   margin: 20px 0;
-  color: #f4f4f4;
+  color: rgb(244, 244, 244);
   text-decoration: none;
 }
 body section.building div a div {
@@ -330,7 +333,6 @@ body section.building div a:hover span {
   .d-lg-none {
     display: inline;
   }
-
   #home .building {
     flex-direction: column;
   }
