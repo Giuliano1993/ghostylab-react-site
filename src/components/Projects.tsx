@@ -1,21 +1,13 @@
 import React, { useEffect } from "react";
-
+import SnakeGame from "./snake/SnakeGame";
 const Projects = () => {
   const delay = ms => new Promise(res => setTimeout(res, ms));
   useEffect(()=>{
-    write()
+    //write()
   })
 
 
-  const write = async () => {
-    var lines = [
-      "Coming Soon",
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      await writeEs8(lines[i])
-    }
-  }
-
+  
   const writeEs8 = async (text) => {
     try {
       var speed = 100;
@@ -35,10 +27,13 @@ const Projects = () => {
 
   return (
     <div id="projects-container" className="container">
-      <div>
+       <div>
         <span id="comingSoonText"></span>
         <span className="pointer"></span>
-      </div>
+      </div> 
+      {
+        //<SnakeGame></SnakeGame>
+      }
     </div>
   )
 }

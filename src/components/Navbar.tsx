@@ -4,6 +4,7 @@ import Home from './Home.tsx'
 import {About} from './About.tsx'
 import Projects from './Projects.tsx'
 import Contact from './Contact.tsx'
+import Error404 from './Error404.tsx'
 import CommandLine from './CommandLine'
 const Navbar = ()=>{
   
@@ -25,10 +26,11 @@ const Navbar = ()=>{
     </nav>
     
     <Routes>
-        <Route exact path='/' element={<Home/>} />
+        <Route  path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/projects' element={<Projects/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path="*" element={<Error404 />} />
     </Routes>
     {/* <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/> */}
     <CommandLine></CommandLine>
