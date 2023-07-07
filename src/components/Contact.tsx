@@ -21,7 +21,7 @@ const Contact = ()=>{
   return(
 
     <div className="container" id="contacts">
-      <form name="contact" method="post">
+      <form name="contact" method="post" action="/contact?success=1"   data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
         <div>
           <div>
