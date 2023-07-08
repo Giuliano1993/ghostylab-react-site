@@ -6,7 +6,7 @@ const Contact = ()=>{
     name: '',
     mail: '',
     message: '',
-    formName: "contact"
+    "form-name": "contact"
   })
 
   const search = useLocation().search;
