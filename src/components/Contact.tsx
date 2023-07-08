@@ -21,8 +21,8 @@ const Contact = ()=>{
   return(
 
     <div className="container" id="contacts">
-      <form name="contact" method="post" action="/contact?success=1"   data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
+      <form name="contact" method="post" action="/contact"   data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <div>
           <div>
             <label htmlFor="namet">Name: </label>
