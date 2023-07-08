@@ -5,7 +5,8 @@ const Contact = ()=>{
   const [formData, setFormData] = useState({
     name: '',
     mail: '',
-    message: ''
+    message: '',
+    formName: "contact"
   })
 
   const search = useLocation().search;
@@ -18,10 +19,24 @@ const Contact = ()=>{
       [e.target.name]:e.target.value
     })
   }
+  const handleSubmit = (event)=>{
+    event.preventDefault();
+
+    //const myForm = event.target;
+    //const formData = new FormData(myForm);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => alert("Thank you for your submission"))
+      .catch((error) => alert(error));
+  }
   return(
 
     <div className="container" id="contacts">
-      <form name="contact" method="post" action="/contact"   data-netlify="true">
+      <form name="contact" method="post" action="/contact"   data-netlify="true" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <div>
           <div>
