@@ -18,6 +18,14 @@ const Contact = ()=>{
       [e.target.name]:e.target.value
     })
   }
+  const resetFormData = ()=>{
+    setFormData({
+      name: '',
+      mail: '',
+      message: '',
+      "form-name": "contact"
+    })
+  }
   const handleSubmit = (event)=>{
     event.preventDefault();
     
@@ -26,7 +34,10 @@ const Contact = ()=>{
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => setSuccess(true))
+      .then(() => {
+        setSuccess(true)
+        resetFormData()
+      })
       .catch((error) => alert(error));
   }
   return(
