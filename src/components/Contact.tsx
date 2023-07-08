@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 
 const Contact = ()=>{
   const [formData, setFormData] = useState({
@@ -9,9 +9,8 @@ const Contact = ()=>{
     "form-name": "contact"
   })
 
-  const search = useLocation().search;
-  const success=new URLSearchParams(search).get("success");
-  console.log(success);//12345
+  const [success, setSuccess] = useState(false)
+
 
   const handleData = e =>{
     setFormData({
@@ -21,16 +20,13 @@ const Contact = ()=>{
   }
   const handleSubmit = (event)=>{
     event.preventDefault();
-
-    //const myForm = event.target;
-    //const formData = new FormData(myForm);
     
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => alert("Thank you for your submission"))
+      .then(() => setSuccess(true))
       .catch((error) => alert(error));
   }
   return(
