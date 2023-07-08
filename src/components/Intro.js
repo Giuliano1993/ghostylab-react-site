@@ -21,13 +21,13 @@ const Intro = () => {
           }
         })
         document.addEventListener('click', function (e) {
-          if (e.key === 'Enter') {
+          
             document.getElementById('welcome-container').classList.add('scale-out-horizontal')
             setTimeout(() => {
               setIntroduced(true);  
             }, 500);
             
-          }
+          
         })
       });
     }
