@@ -6,6 +6,7 @@ import Projects from './Projects.tsx'
 import Contact from './Contact.tsx'
 import Error404 from './Error404.tsx'
 import CommandLine from './CommandLine'
+import Newsletter from "./Newsletter.js";
 const Navbar = ()=>{
   
   return (
@@ -30,6 +31,7 @@ const Navbar = ()=>{
         <Route path='/about' element={<About/>} />
         <Route path='/projects' element={<Projects/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path='/subscribe' element={<Newsletter/>} />
         <Route path="*" element={<Error404 />} />
     </Routes>
     {/* <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/> */}
