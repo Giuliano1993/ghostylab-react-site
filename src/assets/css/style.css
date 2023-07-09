@@ -34,27 +34,27 @@ body .container#home {
 body .container#error h2 {
   text-align: center;
 }
-body #contacts form {
+body #contacts form, body #subscribe form {
   flex-grow: 1;
 }
-body #contacts form > div {
+body #contacts form > div, body #subscribe form > div {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 800px;
 }
-body #contacts form > div div {
+body #contacts form > div div, body #subscribe form > div div {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-body #contacts form > div div textarea {
+body #contacts form > div div textarea, body #subscribe form > div div textarea {
   resize: vertical;
   height: 136px;
 }
-body #contacts form > div div input, body #contacts form > div div textarea {
+body #contacts form > div div input, body #contacts form > div div textarea, body #subscribe form > div div input, body #subscribe form > div div textarea {
   flex-grow: 1;
   margin-top: 0.5rem;
   border: none;
@@ -63,34 +63,34 @@ body #contacts form > div div input, body #contacts form > div div textarea {
   font-family: "Inconsolata", monospace;
   border-bottom: 1px solid rgb(244, 244, 244);
 }
-body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible {
+body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible, body #subscribe form > div div input:focus-visible, body #subscribe form > div div textarea:focus-visible {
   outline: 0;
   border-bottom: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar, body #contacts form > div div textarea::-webkit-scrollbar {
+body #contacts form > div div input::-webkit-scrollbar, body #contacts form > div div textarea::-webkit-scrollbar, body #subscribe form > div div input::-webkit-scrollbar, body #subscribe form > div div textarea::-webkit-scrollbar {
   background-color: rgb(244, 244, 244);
 }
-body #contacts form > div div input::-webkit-scrollbar-button, body #contacts form > div div textarea::-webkit-scrollbar-button {
+body #contacts form > div div input::-webkit-scrollbar-button, body #contacts form > div div textarea::-webkit-scrollbar-button, body #subscribe form > div div input::-webkit-scrollbar-button, body #subscribe form > div div textarea::-webkit-scrollbar-button {
   background-color: rgb(244, 244, 244);
 }
-body #contacts form > div div input::-webkit-scrollbar-track, body #contacts form > div div textarea::-webkit-scrollbar-track {
+body #contacts form > div div input::-webkit-scrollbar-track, body #contacts form > div div textarea::-webkit-scrollbar-track, body #subscribe form > div div input::-webkit-scrollbar-track, body #subscribe form > div div textarea::-webkit-scrollbar-track {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-track-piece, body #contacts form > div div textarea::-webkit-scrollbar-track-piece {
+body #contacts form > div div input::-webkit-scrollbar-track-piece, body #contacts form > div div textarea::-webkit-scrollbar-track-piece, body #subscribe form > div div input::-webkit-scrollbar-track-piece, body #subscribe form > div div textarea::-webkit-scrollbar-track-piece {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-thumb, body #contacts form > div div textarea::-webkit-scrollbar-thumb {
+body #contacts form > div div input::-webkit-scrollbar-thumb, body #contacts form > div div textarea::-webkit-scrollbar-thumb, body #subscribe form > div div input::-webkit-scrollbar-thumb, body #subscribe form > div div textarea::-webkit-scrollbar-thumb {
   background-color: rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-corner, body #contacts form > div div textarea::-webkit-scrollbar-corner {
+body #contacts form > div div input::-webkit-scrollbar-corner, body #contacts form > div div textarea::-webkit-scrollbar-corner, body #subscribe form > div div input::-webkit-scrollbar-corner, body #subscribe form > div div textarea::-webkit-scrollbar-corner {
   background-color: rgb(30, 30, 30);
 }
-body #contacts form > div div input::-webkit-resizer, body #contacts form > div div textarea::-webkit-resizer {
+body #contacts form > div div input::-webkit-resizer, body #contacts form > div div textarea::-webkit-resizer, body #subscribe form > div div input::-webkit-resizer, body #subscribe form > div div textarea::-webkit-resizer {
   background-color: rgb(30, 30, 30);
 }
-body #contacts form > div div button {
+body #contacts form > div div button, body #subscribe form > div div button {
   background: transparent;
   color: white;
   border: none;
@@ -100,7 +100,7 @@ body #contacts form > div div button {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-body #contacts form .success-message {
+body #contacts form .success-message, body #subscribe form .success-message {
   border: 1px solid rgb(20, 210, 118);
   color: rgb(20, 210, 118);
   text-align: center;

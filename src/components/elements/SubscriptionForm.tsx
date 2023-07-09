@@ -7,7 +7,7 @@ const SubscriptionForm = () => {
         "form-name": "subscribe"
       })
     
-      //const [success, setSuccess] = useState(false)
+      const [success, setSuccess] = useState(false)
     
     
       const handleData = e =>{
@@ -51,8 +51,13 @@ const SubscriptionForm = () => {
             </div>
             <div>
                 <button type="submit">Send</button>
-        </div>
-   </form>
+            </div>
+            {success ? (
+            <div className="success-message">Thank you for contacting me. I will read your mail and contact you asap ;)</div>
+            ) 
+            : 
+            ("")}
+    </form>
     )
 }
 
