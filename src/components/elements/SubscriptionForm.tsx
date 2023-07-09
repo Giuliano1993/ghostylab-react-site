@@ -7,7 +7,7 @@ const SubscriptionForm = () => {
         "form-name": "subscribe"
       })
     
-      const [success, setSuccess] = useState(false)
+      //const [success, setSuccess] = useState(false)
     
     
       const handleData = e =>{

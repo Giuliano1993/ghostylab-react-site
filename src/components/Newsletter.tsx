@@ -1,5 +1,5 @@
 import React from "react";
-import SubscriptionForm from "./elements/SubscriptionForm";
+import SubscriptionForm from "./elements/SubscriptionForm.tsx";
 
 const Newsletter = () => {
 
