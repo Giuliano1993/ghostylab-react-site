@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import ItFlag from "../../assets/pics/IT_flag.png";
+import EnFlag from "../../assets/pics/EN_flag.png";
 const SubscriptionForm = () => {
  
     const [formData, setFormData] = useState({
@@ -49,11 +51,23 @@ const SubscriptionForm = () => {
                 <label htmlFor="mail">Mail: </label>
                 <input type="mail" name="mail" onChange={handleData} value={formData.mail} className="form-control"/>
             </div>
+            <div className="flags">
+              <p>Pick the language for the newsletters you'll receive: </p>
+              <input type="radio" name="lang" id="itNewsletter" value="IT"/>
+              <label htmlFor="itNewsletter">
+                <img src={ItFlag} width="30px" alt="Italian Flag"/>
+              </label>
+              
+              <input type="radio" name="lang" id="enNewsletter" value="EN" checked/>
+              <label htmlFor="enNewsletter">
+                <img src={EnFlag} width="30px" alt="UK Flag"/>
+              </label>
+            </div>
             <div>
-                <button type="submit">Send</button>
+                <button type="submit">Subscribe</button>
             </div>
             {success ? (
-            <div className="success-message">Thank you for contacting me. I will read your mail and contact you asap ;)</div>
+            <div className="success-message">Thank you for subscribing. You'll soon receive a welcome mail, then see you on monday ;)</div>
             ) 
             : 
             ("")}

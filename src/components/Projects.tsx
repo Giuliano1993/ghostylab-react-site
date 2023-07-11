@@ -27,7 +27,7 @@ const Projects = () => {
         await delay(speed)
       }
       var html = document.getElementById('comingSoonText')!.innerHTML;
-      document.getElementById('comingSoonText')!.innerHTML = html + '<br>';
+      document.getElementById('comingSoonText')!.innerHTML = html;// + '<br>';
     } catch (err) {
       console.error(err)
     }
@@ -36,8 +36,14 @@ const Projects = () => {
   return (
     <div id="projects-container" className="container">
        <div>
-        <span id="comingSoonText"></span>
-        <span className="pointer"></span>
+        <p>I like develop small fun projects to share. Here you won't probably find my work stuff, but i can show you my skill while having fun with code</p>
+        <p>If you propose me a fun and interesting project, you can be sure I will deliver it in the most positive and committed attitude, check these small works of mine, what do you think? </p>
+      
+        <div>
+          <span id="comingSoonText"></span>
+          <span className="pointer"></span>
+        </div>
+        
       </div> 
       {
         //<SnakeGame></SnakeGame>
