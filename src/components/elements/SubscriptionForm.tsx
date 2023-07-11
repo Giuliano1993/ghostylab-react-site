@@ -6,6 +6,7 @@ const SubscriptionForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         mail: '',
+        lang: 'EN',
         "form-name": "subscribe"
       })
     
@@ -22,6 +23,7 @@ const SubscriptionForm = () => {
         setFormData({
           name: '',
           mail: '',
+          lang: 'EN',
           "form-name": "subscribe"
         })
       }
@@ -53,12 +55,12 @@ const SubscriptionForm = () => {
             </div>
             <div className="flags">
               <p>Pick the language for the newsletters you'll receive: </p>
-              <input type="radio" name="lang" id="itNewsletter" value="IT"/>
+              <input type="radio" name="lang" id="itNewsletter" value="IT" onChange={handleData} checked={formData.lang === "IT"}/>
               <label htmlFor="itNewsletter">
                 <img src={ItFlag} width="30px" alt="Italian Flag"/>
               </label>
               
-              <input type="radio" name="lang" id="enNewsletter" value="EN" checked/>
+              <input type="radio" name="lang" id="enNewsletter" value="EN" onChange={handleData} checked={formData.lang === "EN"}/>
               <label htmlFor="enNewsletter">
                 <img src={EnFlag} width="30px" alt="UK Flag"/>
               </label>
