@@ -13,7 +13,9 @@ const SubscriptionForm = () => {
       const [success, setSuccess] = useState(false)
     
     
-      const handleData = e =>{
+      const handleData = (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement>) =>{
+        console.log('helo')
+        console.log(e)
         setFormData({
           ...formData,
           [e.target.name]:e.target.value
@@ -53,17 +55,34 @@ const SubscriptionForm = () => {
                 <label htmlFor="mail">Mail: </label>
                 <input type="mail" name="mail" onChange={handleData} value={formData.mail} className="form-control"/>
             </div>
-            <div className="flags">
+            <div className="flags" >
               <p>Pick the language for the newsletters you'll receive: </p>
-              <input type="radio" name="lang" id="itNewsletter" value="IT" onChange={handleData} checked={formData.lang === "IT"}/>
-              <label htmlFor="itNewsletter">
+
+              <select name="lang" id="lang" onChange={handleData} value={formData.lang} className="form-control">
+                <option value="EN">English</option>
+                <option value="IT">Italiano </option>
+              </select>
+              {/* <label htmlFor="itNewsletter">
+                <input 
+                  type="radio" 
+                  name="lang" 
+                  id="itNewsletter" 
+                  value="IT"  
+                  checked={formData.lang === "IT"} 
+                  onChange={handleData}/>
                 <img src={ItFlag} width="30px" alt="Italian Flag"/>
               </label>
               
-              <input type="radio" name="lang" id="enNewsletter" value="EN" onChange={handleData} checked={formData.lang === "EN"}/>
               <label htmlFor="enNewsletter">
+                <input 
+                  type="radio" 
+                  name="lang" 
+                  id="enNewsletter" 
+                  value="EN"  
+                  checked={formData.lang === "EN"}
+                  onChange={handleData}/>
                 <img src={EnFlag} width="30px" alt="UK Flag"/>
-              </label>
+              </label> */}
             </div>
             <div>
                 <button type="submit">Subscribe</button>

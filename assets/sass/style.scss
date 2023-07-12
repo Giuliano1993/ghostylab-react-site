@@ -52,9 +52,9 @@ body{
     #subscribe{
       &>div{
         margin-left: 20px;
-      }
-      p{
-        margin-bottom: 20px;
+        &>p{
+          margin-bottom: 20px;
+        }
       }
       form{
         flex-grow: 1;
@@ -65,7 +65,7 @@ body{
           
           width: 800px;
             &.flags{
-              
+              margin: 25px auto;
               flex-direction: row;
               label{
                 margin-left: 15px;
@@ -77,8 +77,13 @@ body{
               resize: vertical;
               height: 136px;
             }
-            
-            input,textarea{
+            select{
+              margin-top: 0!important;
+              option{
+                color: $terminal-black;
+              }
+            }
+            input,textarea, select{
               flex-grow: 1;
               margin-top: 0.5rem;
               border: none;

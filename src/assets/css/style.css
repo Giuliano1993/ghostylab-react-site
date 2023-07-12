@@ -37,7 +37,7 @@ body .container#error h2 {
 body #subscribe > div {
   margin-left: 20px;
 }
-body #subscribe p {
+body #subscribe > div > p {
   margin-bottom: 20px;
 }
 body #subscribe form {
@@ -50,6 +50,7 @@ body #subscribe form > div {
   width: 800px;
 }
 body #subscribe form > div.flags {
+  margin: 25px auto;
   flex-direction: row;
 }
 body #subscribe form > div.flags label {
@@ -61,7 +62,13 @@ body #subscribe form > div textarea {
   resize: vertical;
   height: 136px;
 }
-body #subscribe form > div input, body #subscribe form > div textarea {
+body #subscribe form > div select {
+  margin-top: 0 !important;
+}
+body #subscribe form > div select option {
+  color: rgb(30, 30, 30);
+}
+body #subscribe form > div input, body #subscribe form > div textarea, body #subscribe form > div select {
   flex-grow: 1;
   margin-top: 0.5rem;
   border: none;
@@ -70,37 +77,37 @@ body #subscribe form > div input, body #subscribe form > div textarea {
   font-family: "Inconsolata", monospace;
   border-bottom: 1px solid rgb(244, 244, 244);
 }
-body #subscribe form > div input:focus-visible, body #subscribe form > div textarea:focus-visible {
+body #subscribe form > div input:focus-visible, body #subscribe form > div textarea:focus-visible, body #subscribe form > div select:focus-visible {
   outline: 0;
   border-bottom: 1px solid rgb(20, 210, 118);
 }
-body #subscribe form > div input::-webkit-scrollbar, body #subscribe form > div textarea::-webkit-scrollbar {
+body #subscribe form > div input::-webkit-scrollbar, body #subscribe form > div textarea::-webkit-scrollbar, body #subscribe form > div select::-webkit-scrollbar {
   background-color: rgb(244, 244, 244);
 }
-body #subscribe form > div input::-webkit-scrollbar-button, body #subscribe form > div textarea::-webkit-scrollbar-button {
+body #subscribe form > div input::-webkit-scrollbar-button, body #subscribe form > div textarea::-webkit-scrollbar-button, body #subscribe form > div select::-webkit-scrollbar-button {
   background-color: rgb(244, 244, 244);
 }
-body #subscribe form > div input::-webkit-scrollbar-track, body #subscribe form > div textarea::-webkit-scrollbar-track {
+body #subscribe form > div input::-webkit-scrollbar-track, body #subscribe form > div textarea::-webkit-scrollbar-track, body #subscribe form > div select::-webkit-scrollbar-track {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #subscribe form > div input::-webkit-scrollbar-track-piece, body #subscribe form > div textarea::-webkit-scrollbar-track-piece {
+body #subscribe form > div input::-webkit-scrollbar-track-piece, body #subscribe form > div textarea::-webkit-scrollbar-track-piece, body #subscribe form > div select::-webkit-scrollbar-track-piece {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #subscribe form > div input::-webkit-scrollbar-thumb, body #subscribe form > div textarea::-webkit-scrollbar-thumb {
+body #subscribe form > div input::-webkit-scrollbar-thumb, body #subscribe form > div textarea::-webkit-scrollbar-thumb, body #subscribe form > div select::-webkit-scrollbar-thumb {
   background-color: rgb(20, 210, 118);
 }
-body #subscribe form > div input::-webkit-scrollbar-corner, body #subscribe form > div textarea::-webkit-scrollbar-corner {
+body #subscribe form > div input::-webkit-scrollbar-corner, body #subscribe form > div textarea::-webkit-scrollbar-corner, body #subscribe form > div select::-webkit-scrollbar-corner {
   background-color: rgb(30, 30, 30);
 }
-body #subscribe form > div input::-webkit-resizer, body #subscribe form > div textarea::-webkit-resizer {
+body #subscribe form > div input::-webkit-resizer, body #subscribe form > div textarea::-webkit-resizer, body #subscribe form > div select::-webkit-resizer {
   background-color: rgb(30, 30, 30);
 }
-body #subscribe form > div input[type=radio], body #subscribe form > div textarea[type=radio] {
+body #subscribe form > div input[type=radio], body #subscribe form > div textarea[type=radio], body #subscribe form > div select[type=radio] {
   display: none;
 }
-body #subscribe form > div input[type=radio]:checked + label > img, body #subscribe form > div textarea[type=radio]:checked + label > img {
+body #subscribe form > div input[type=radio]:checked + label > img, body #subscribe form > div textarea[type=radio]:checked + label > img, body #subscribe form > div select[type=radio]:checked + label > img {
   outline: 2px solid rgb(20, 210, 118);
 }
 body #subscribe form > div button {
