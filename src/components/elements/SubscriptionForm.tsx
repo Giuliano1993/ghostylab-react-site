@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import ItFlag from "../../assets/pics/IT_flag.png";
-import EnFlag from "../../assets/pics/EN_flag.png";
+//import ItFlag from "../../assets/pics/IT_flag.png";
+//import EnFlag from "../../assets/pics/EN_flag.png";
 const SubscriptionForm = () => {
  
     const [formData, setFormData] = useState({
