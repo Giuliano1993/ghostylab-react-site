@@ -11,6 +11,14 @@ const SubscriptionForm = () => {
       })
     
       const [success, setSuccess] = useState(false)
+
+      const [errors, setErrors] = useState({
+        name: false,
+        mail: false,
+        message: false
+      })
+    
+      const [errorMessage, setErrorMessage] = useState<string|null>(null); 
     
     
       const handleData = (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement>) =>{
@@ -29,9 +37,57 @@ const SubscriptionForm = () => {
           "form-name": "subscribe"
         })
       }
+      const resetErrors = ()=>{
+        setErrors({
+          name: false,
+          mail: false,
+          message: false
+        })
+        setErrorMessage(null);
+      }
+      const validateForm = ()=>{
+        let formIsValid = true;
+        setSuccess(false)
+        resetErrors()
+        if(formData.name.trim() === ''){
+          formIsValid = false;
+          setErrors({
+            ...errors,
+            name: true
+          })
+          console.log('serve un nome');
+          setErrorMessage("Name field cannot be empty")
+        }
+    
+        if(formData.mail.trim() === ''){
+          formIsValid = false;
+          setErrors({
+            ...errors,
+            mail: true
+          })
+          console.log('serve una mail');
+          setErrorMessage("Mail field cannot be empty")
+        }
+    
+        let pattern = new RegExp(/^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        if(!pattern.test(formData.mail.trim())){
+          formIsValid = false;
+          setErrors({
+            ...errors,
+            mail:true
+          })
+          console.log('serve una mail valida');
+          setErrorMessage("Need a valid email")
+        }
+    
+    
+    
+        return formIsValid
+      }
+
       const handleSubmit = (event)=>{
         event.preventDefault();
-        
+        if(!validateForm()) return;
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -49,11 +105,11 @@ const SubscriptionForm = () => {
         <form name="subscribe" method="post" action="/subscribe" data-netlify="true" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="namet">Name: </label>
-                <input type="text" name="name" onChange={handleData} value={formData.name} className="form-control"/>
+                <input type="text" required name="name" onChange={handleData} value={formData.name} className={`form-control ${errors.name ? 'error' : ''}`}/>
             </div>
             <div>
                 <label htmlFor="mail">Mail: </label>
-                <input type="mail" name="mail" onChange={handleData} value={formData.mail} className="form-control"/>
+                <input type="mail" required name="mail" onChange={handleData} value={formData.mail} className={`form-control ${errors.mail ? 'error' : ''}`}/>
             </div>
             <div className="flags" >
               <p>Pick the language for the newsletters you'll receive: </p>
@@ -62,36 +118,15 @@ const SubscriptionForm = () => {
                 <option value="EN">English</option>
                 <option value="IT">Italiano </option>
               </select>
-              {/* <label htmlFor="itNewsletter">
-                <input 
-                  type="radio" 
-                  name="lang" 
-                  id="itNewsletter" 
-                  value="IT"  
-                  checked={formData.lang === "IT"} 
-                  onChange={handleData}/>
-                <img src={ItFlag} width="30px" alt="Italian Flag"/>
-              </label>
-              
-              <label htmlFor="enNewsletter">
-                <input 
-                  type="radio" 
-                  name="lang" 
-                  id="enNewsletter" 
-                  value="EN"  
-                  checked={formData.lang === "EN"}
-                  onChange={handleData}/>
-                <img src={EnFlag} width="30px" alt="UK Flag"/>
-              </label> */}
             </div>
             <div>
                 <button type="submit">Subscribe</button>
             </div>
             {success ? (
-            <div className="success-message">Thank you for subscribing. You'll soon receive a welcome mail, then see you on monday ;)</div>
-            ) 
+            <div className="success message">Thank you for subscribing. You'll soon receive a welcome mail, then see you on monday ;)</div>) 
             : 
             ("")}
+            {errorMessage ? (<div className="error message">{errorMessage}</div>) : ("")}
     </form>
     )
 }

@@ -8,6 +8,13 @@ const Contact = ()=>{
     message: '',
     "form-name": "contact"
   })
+  const [errors, setErrors] = useState({
+    name: false,
+    mail: false,
+    message: false
+  })
+
+  const [errorMessage, setErrorMessage] = useState<string|null>(null); 
 
   const [success, setSuccess] = useState(false)
 
@@ -26,9 +33,65 @@ const Contact = ()=>{
       "form-name": "contact"
     })
   }
+  const resetErrors = ()=>{
+    setErrors({
+      name: false,
+      mail: false,
+      message: false
+    })
+    setErrorMessage(null);
+  }
+  const validateForm = ()=>{
+    setSuccess(false)
+    resetErrors()
+    let formIsValid = true;
+    if(formData.name.trim() === ''){
+      formIsValid = false;
+      setErrors({
+        ...errors,
+        name: true
+      })
+      console.log('serve un nome');
+      setErrorMessage("Name field cannot be empty")
+    }
+
+    if(formData.mail.trim() === ''){
+      formIsValid = false;
+      setErrors({
+        ...errors,
+        mail: true
+      })
+      console.log('serve una mail');
+      setErrorMessage("Mail field cannot be empty")
+    }
+
+    let pattern = new RegExp(/^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    if(!pattern.test(formData.mail.trim())){
+      formIsValid = false;
+      setErrors({
+        ...errors,
+        mail:true
+      })
+      console.log('serve una mail valida');
+      setErrorMessage("Need a valid email")
+    }
+
+
+
+    if(formData.message.trim() === ''){
+      formIsValid = false;
+      setErrors({
+        ...errors,
+        message : true
+      })
+      setErrorMessage("Message field cannot be empty")
+    }
+
+    return formIsValid
+  }
   const handleSubmit = (event)=>{
     event.preventDefault();
-    
+    if(!validateForm()) return;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -48,25 +111,26 @@ const Contact = ()=>{
         <div>
           <div>
             <label htmlFor="namet">Name: </label>
-            <input type="text" name="name" onChange={handleData} value={formData.name} className="form-control"/>
+            <input type="text" required name="name" onChange={handleData} value={formData.name} className={`form-control ${errors.name ? 'error' : ''}`}/>
           </div>
           <div>
             <label htmlFor="mail">Mail: </label>
-            <input type="mail" name="mail" onChange={handleData} value={formData.mail} className="form-control"/>
+            <input type="mail" required name="mail" onChange={handleData} value={formData.mail} className={`form-control ${errors.mail ? 'error' : ''}`}/>
           </div>
           <div>
             <label htmlFor="message">Message:</label>
-            <textarea name="message" onChange={handleData} value={formData.message} className="form-control"></textarea>
+            <textarea name="message" required onChange={handleData} value={formData.message} className={`form-control ${errors.message ? 'error' : ''}`}></textarea>
           </div>
           <div>
             <button type="submit">Send</button>
           </div>
         </div>
-        {success ? (
-        <div className="success-message">Thank you for contacting me. I will read your mail and contact you asap ;)</div>
-          ) 
+        {success ? (<div className="success message">Thank you for contacting me. I will read your mail and contact you asap ;)</div> ) 
           : 
           ("")}
+        {errorMessage ? (<div className="error message">{errorMessage}</div>) : ("")}
+          
+        
       </form>
     </div>
   )

@@ -91,6 +91,9 @@ body{
               color:$terminal-white;
               font-family: 'Inconsolata', monospace;
               border-bottom: 1px solid $terminal-white;
+              &.error{
+                border-bottom: 1px solid red; 
+              }
               &:focus-visible{
                 outline:0;
                 border-bottom: 1px solid $terminal-green;
@@ -172,6 +175,9 @@ body{
               color:$terminal-white;
               font-family: 'Inconsolata', monospace;
               border-bottom: 1px solid $terminal-white;
+              &.error{
+                border-bottom: 1px solid red;
+              }              
               &:focus-visible{
                 outline:0;
                 border-bottom: 1px solid $terminal-green;
@@ -216,12 +222,20 @@ body{
             }
           }
         }
-        .success-message{
-          border: 1px solid $terminal-green;
-          color: $terminal-green;
-          text-align: center;
-          padding: 10px;
-        }
+        
+      }
+    }
+    .message{
+      border: 1px solid;
+      text-align: center;
+      padding: 10px;
+      &.success{
+        border-color: $terminal-green;
+        color: $terminal-green; 
+      }
+      &.error{
+        border-color: red;
+        color: red; 
       }
     }
     #terminalEditor{

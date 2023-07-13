@@ -77,6 +77,9 @@ body #subscribe form > div input, body #subscribe form > div textarea, body #sub
   font-family: "Inconsolata", monospace;
   border-bottom: 1px solid rgb(244, 244, 244);
 }
+body #subscribe form > div input.error, body #subscribe form > div textarea.error, body #subscribe form > div select.error {
+  border-bottom: 1px solid red;
+}
 body #subscribe form > div input:focus-visible, body #subscribe form > div textarea:focus-visible, body #subscribe form > div select:focus-visible {
   outline: 0;
   border-bottom: 1px solid rgb(20, 210, 118);
@@ -155,6 +158,9 @@ body #contacts form > div div input, body #contacts form > div div textarea {
   font-family: "Inconsolata", monospace;
   border-bottom: 1px solid rgb(244, 244, 244);
 }
+body #contacts form > div div input.error, body #contacts form > div div textarea.error {
+  border-bottom: 1px solid red;
+}
 body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible {
   outline: 0;
   border-bottom: 1px solid rgb(20, 210, 118);
@@ -192,11 +198,18 @@ body #contacts form > div div button {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-body #contacts form .success-message {
-  border: 1px solid rgb(20, 210, 118);
-  color: rgb(20, 210, 118);
+body .message {
+  border: 1px solid;
   text-align: center;
   padding: 10px;
+}
+body .message.success {
+  border-color: rgb(20, 210, 118);
+  color: rgb(20, 210, 118);
+}
+body .message.error {
+  border-color: red;
+  color: red;
 }
 body #terminalEditor {
   max-height: 200px;
