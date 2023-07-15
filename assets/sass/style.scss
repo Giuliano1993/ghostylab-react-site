@@ -150,79 +150,140 @@ body{
       }
     }
     #contacts {
-      form{
-        flex-grow: 1;
+      flex-direction: column;
+      padding-top: 30px;
+      #contact_line{
+        display: flex;
+        margin-top: 30px;
+        width: 100%;
         &>div{
-          margin: 0 auto;
-          display: flex;
-          flex-direction: column;
-          width: 800px;
-          div{
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            textarea{
-              resize: vertical;
-              height: 136px;
-            }
-            input,textarea{
-              flex-grow: 1;
-              margin-top: 0.5rem;
-              border: none;
-              background-color:transparent;
-              color:$terminal-white;
-              font-family: 'Inconsolata', monospace;
-              border-bottom: 1px solid $terminal-white;
-              &.error{
-                border-bottom: 1px solid red;
-              }              
-              &:focus-visible{
-                outline:0;
-                border-bottom: 1px solid $terminal-green;
-              }
-              &::-webkit-scrollbar{
-                background-color: $terminal-white;
-              }
-              &::-webkit-scrollbar-button{
-                background-color: $terminal-white;
-              }
-              &::-webkit-scrollbar-track{
-                background-color: $terminal-black;
-                border: 1px solid $terminal-green;
-              }
-              &::-webkit-scrollbar-track-piece{
-                background-color: $terminal-black;
-                border: 1px solid $terminal-green;
-              }
-              &::-webkit-scrollbar-thumb{
-                background-color: $terminal-green;
-              }
-              &::-webkit-scrollbar-corner{
-                background-color: $terminal-black;
+          &:first-child{
+            flex-grow: 1;
+            flex-basis: 50%;
+            margin-right: 10px;
+          }
+          &:last-child{
+            flex-grow: 1;
+            flex-basis: 50%;
+            margin-left: 10px;
+            &>div{
+              display: flex;
+              flex-direction: column;
+              a{
+                padding: 5px 10px;
+                margin: 20px 0;
+                color: $terminal-white;
+                text-decoration: none;
+                align-self: center;
                 
+                div{
+                  display:block;
+                  &:nth-child(2){
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    p{
+                      padding: 0;
+                      &:not(.side){
+                        flex-basis: 99%;
+                        flex-grow: 2;
+                        text-align: center;
+                      }
+                      &.side{
+                        flex-shrink: 2;
+                      }
+                      &.side:last-child{
+                        text-align: right;
+                      }
+                    }
+                  }
+                }
+                span{
+                  display: none;
+                }
+                &:hover span{
+                  display: inline-block;
+                  
+                }
               }
-              &::-webkit-resizer{
-                background-color: $terminal-black;
-                
-              }
-
-
-            }
-            button{
-              background: transparent;
-              color: white;
-              border: none;
-              cursor: pointer;
-              font-family: 'Inconsolata', monospace;
-              border: 1px solid white;
-              padding-top: 0.5em;
-              padding-bottom: 0.5em;
             }
           }
         }
-        
+        form{
+          flex-grow: 1;
+          &>div{
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            
+            div{
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              margin-top: 1rem;
+              margin-bottom: 1rem;
+              textarea{
+                resize: vertical;
+                height: 136px;
+              }
+              input,textarea{
+                flex-grow: 1;
+                margin-top: 0.5rem;
+                border: none;
+                background-color:transparent;
+                color:$terminal-white;
+                font-family: 'Inconsolata', monospace;
+                border-bottom: 1px solid $terminal-white;
+                &.error{
+                  border-bottom: 1px solid red;
+                }              
+                &:focus-visible{
+                  outline:0;
+                  border-bottom: 1px solid $terminal-green;
+                }
+                &::-webkit-scrollbar{
+                  background-color: $terminal-white;
+                }
+                &::-webkit-scrollbar-button{
+                  background-color: $terminal-white;
+                }
+                &::-webkit-scrollbar-track{
+                  background-color: $terminal-black;
+                  border: 1px solid $terminal-green;
+                }
+                &::-webkit-scrollbar-track-piece{
+                  background-color: $terminal-black;
+                  border: 1px solid $terminal-green;
+                }
+                &::-webkit-scrollbar-thumb{
+                  background-color: $terminal-green;
+                }
+                &::-webkit-scrollbar-corner{
+                  background-color: $terminal-black;
+                  
+                }
+                &::-webkit-resizer{
+                  background-color: $terminal-black;
+                  
+                }
+  
+  
+              }
+              button{
+                background: transparent;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-family: 'Inconsolata', monospace;
+                border: 1px solid white;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+              }
+            }
+          }
+          
+        }
       }
     }
     .message{

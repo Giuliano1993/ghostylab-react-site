@@ -129,27 +129,85 @@ body #subscribe form .success-message {
   text-align: center;
   padding: 10px;
 }
-body #contacts form {
+body #contacts {
+  flex-direction: column;
+  padding-top: 30px;
+}
+body #contacts #contact_line {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+}
+body #contacts #contact_line > div:first-child {
+  flex-grow: 1;
+  flex-basis: 50%;
+  margin-right: 10px;
+}
+body #contacts #contact_line > div:last-child {
+  flex-grow: 1;
+  flex-basis: 50%;
+  margin-left: 10px;
+}
+body #contacts #contact_line > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+}
+body #contacts #contact_line > div:last-child > div a {
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+  align-self: center;
+}
+body #contacts #contact_line > div:last-child > div a div {
+  display: block;
+}
+body #contacts #contact_line > div:last-child > div a div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+body #contacts #contact_line > div:last-child > div a div:nth-child(2) p {
+  padding: 0;
+}
+body #contacts #contact_line > div:last-child > div a div:nth-child(2) p:not(.side) {
+  flex-basis: 99%;
+  flex-grow: 2;
+  text-align: center;
+}
+body #contacts #contact_line > div:last-child > div a div:nth-child(2) p.side {
+  flex-shrink: 2;
+}
+body #contacts #contact_line > div:last-child > div a div:nth-child(2) p.side:last-child {
+  text-align: right;
+}
+body #contacts #contact_line > div:last-child > div a span {
+  display: none;
+}
+body #contacts #contact_line > div:last-child > div a:hover span {
+  display: inline-block;
+}
+body #contacts #contact_line form {
   flex-grow: 1;
 }
-body #contacts form > div {
+body #contacts #contact_line form > div {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 800px;
 }
-body #contacts form > div div {
+body #contacts #contact_line form > div div {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-body #contacts form > div div textarea {
+body #contacts #contact_line form > div div textarea {
   resize: vertical;
   height: 136px;
 }
-body #contacts form > div div input, body #contacts form > div div textarea {
+body #contacts #contact_line form > div div input, body #contacts #contact_line form > div div textarea {
   flex-grow: 1;
   margin-top: 0.5rem;
   border: none;
@@ -158,37 +216,37 @@ body #contacts form > div div input, body #contacts form > div div textarea {
   font-family: "Inconsolata", monospace;
   border-bottom: 1px solid rgb(244, 244, 244);
 }
-body #contacts form > div div input.error, body #contacts form > div div textarea.error {
+body #contacts #contact_line form > div div input.error, body #contacts #contact_line form > div div textarea.error {
   border-bottom: 1px solid red;
 }
-body #contacts form > div div input:focus-visible, body #contacts form > div div textarea:focus-visible {
+body #contacts #contact_line form > div div input:focus-visible, body #contacts #contact_line form > div div textarea:focus-visible {
   outline: 0;
   border-bottom: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar, body #contacts form > div div textarea::-webkit-scrollbar {
+body #contacts #contact_line form > div div input::-webkit-scrollbar, body #contacts #contact_line form > div div textarea::-webkit-scrollbar {
   background-color: rgb(244, 244, 244);
 }
-body #contacts form > div div input::-webkit-scrollbar-button, body #contacts form > div div textarea::-webkit-scrollbar-button {
+body #contacts #contact_line form > div div input::-webkit-scrollbar-button, body #contacts #contact_line form > div div textarea::-webkit-scrollbar-button {
   background-color: rgb(244, 244, 244);
 }
-body #contacts form > div div input::-webkit-scrollbar-track, body #contacts form > div div textarea::-webkit-scrollbar-track {
+body #contacts #contact_line form > div div input::-webkit-scrollbar-track, body #contacts #contact_line form > div div textarea::-webkit-scrollbar-track {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-track-piece, body #contacts form > div div textarea::-webkit-scrollbar-track-piece {
+body #contacts #contact_line form > div div input::-webkit-scrollbar-track-piece, body #contacts #contact_line form > div div textarea::-webkit-scrollbar-track-piece {
   background-color: rgb(30, 30, 30);
   border: 1px solid rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-thumb, body #contacts form > div div textarea::-webkit-scrollbar-thumb {
+body #contacts #contact_line form > div div input::-webkit-scrollbar-thumb, body #contacts #contact_line form > div div textarea::-webkit-scrollbar-thumb {
   background-color: rgb(20, 210, 118);
 }
-body #contacts form > div div input::-webkit-scrollbar-corner, body #contacts form > div div textarea::-webkit-scrollbar-corner {
+body #contacts #contact_line form > div div input::-webkit-scrollbar-corner, body #contacts #contact_line form > div div textarea::-webkit-scrollbar-corner {
   background-color: rgb(30, 30, 30);
 }
-body #contacts form > div div input::-webkit-resizer, body #contacts form > div div textarea::-webkit-resizer {
+body #contacts #contact_line form > div div input::-webkit-resizer, body #contacts #contact_line form > div div textarea::-webkit-resizer {
   background-color: rgb(30, 30, 30);
 }
-body #contacts form > div div button {
+body #contacts #contact_line form > div div button {
   background: transparent;
   color: white;
   border: none;

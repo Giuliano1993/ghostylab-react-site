@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import TerminalButton from "./elements/TerminalButton.tsx";
 //import { useLocation } from "react-router-dom";
 
 const Contact = ()=>{
@@ -106,32 +107,47 @@ const Contact = ()=>{
   return(
 
     <div className="container" id="contacts">
-      <form name="contact" method="post" action="/contact"   data-netlify="true" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
+      <p>
+        Did youn like my small lab? You want to start a conversation about coding? You want to hire me for some project or at least ask for an estimate? You can write me directly here, i will contact you asap ;) If you prefer to reach out on social media, here you can also find links to connect 
+      </p>
+      <div id="contact_line">
         <div>
+        <form name="contact" method="post" action="/contact"   data-netlify="true" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
           <div>
-            <label htmlFor="namet">Name: </label>
-            <input type="text" required name="name" onChange={handleData} value={formData.name} className={`form-control ${errors.name ? 'error' : ''}`}/>
+            <div>
+              <label htmlFor="namet">Name: </label>
+              <input type="text" required name="name" onChange={handleData} value={formData.name} className={`form-control ${errors.name ? 'error' : ''}`}/>
+            </div>
+            <div>
+              <label htmlFor="mail">Mail: </label>
+              <input type="mail" required name="mail" onChange={handleData} value={formData.mail} className={`form-control ${errors.mail ? 'error' : ''}`}/>
+            </div>
+            <div>
+              <label htmlFor="message">Message:</label>
+              <textarea name="message" required onChange={handleData} value={formData.message} className={`form-control ${errors.message ? 'error' : ''}`}></textarea>
+            </div>
+            <div>
+              <button type="submit">Send</button>
+            </div>
           </div>
+          {success ? (<div className="success message">Thank you for contacting me. I will read your mail and contact you asap ;)</div> ) 
+            : 
+            ("")}
+          {errorMessage ? (<div className="error message">{errorMessage}</div>) : ("")}
+        </form>
+
+        </div>
+        <div>         
           <div>
-            <label htmlFor="mail">Mail: </label>
-            <input type="mail" required name="mail" onChange={handleData} value={formData.mail} className={`form-control ${errors.mail ? 'error' : ''}`}/>
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea name="message" required onChange={handleData} value={formData.message} className={`form-control ${errors.message ? 'error' : ''}`}></textarea>
-          </div>
-          <div>
-            <button type="submit">Send</button>
+            <TerminalButton text="Dev.to"  href={"https://dev.to/giuliano1993"}/>
+            <TerminalButton text="LinkedIn"  href={"https://www.linkedin.com/in/giuliano-gostinfini/"}/>
+            <TerminalButton text="Twitter"  href={"https://twitter.com/gosty93"}/>
+            <TerminalButton text="Github"  href={"https://github.com/Giuliano1993"}/>
           </div>
         </div>
-        {success ? (<div className="success message">Thank you for contacting me. I will read your mail and contact you asap ;)</div> ) 
-          : 
-          ("")}
-        {errorMessage ? (<div className="error message">{errorMessage}</div>) : ("")}
-          
-        
-      </form>
+      </div>
+      
     </div>
   )
 }
