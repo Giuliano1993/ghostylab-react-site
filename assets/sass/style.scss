@@ -244,6 +244,9 @@ body{
       left: 0;
       bottom: 0;
       width: 100%;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     .pointer{
         display: inline-block;
@@ -411,7 +414,49 @@ body{
         flex-grow: 2;
       }
     }
-
+    section.home-subscribe{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a{
+        padding: 5px 10px;
+        margin: 20px 0;
+        color: $terminal-white;
+        text-decoration: none;
+        /*width: 267px;
+        display: block;*/
+        div{
+          display:block;
+          &:nth-child(2){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            p{
+              padding: 0;
+              &:not(.side){
+                flex-basis: 99%;
+                flex-grow: 2;
+                text-align: center;
+              }
+              &.side{
+                flex-shrink: 2;
+              }
+              &.side:last-child{
+                text-align: right;
+              }
+            }
+          }
+        }
+        span{
+          display: none;
+        }
+        &:hover span{
+          display: inline-block;
+          
+        }
+      }
+    }
     section.building{
       display: flex;
       align-items: center;
@@ -467,6 +512,7 @@ body{
     }
     
 }
+
 .d-lg-none{
   display: none;
 }
@@ -482,9 +528,41 @@ body{
   #home{
     .building{
       flex-direction: column;
+      .navbar-item{
+        margin-top: 0;
+        padding-top: 0;
+      }
       &>p{
         text-align: center;
       }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  #terminalEditor{
+    display: none;
+  }
+}
+
+
+
+@media screen and (max-width: 612px) {
+  #home{
+    .building{
+      .homeActions{
+        display: flex;
+        flex-direction: column;
+        .navbar-item{
+          margin: unset;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 556px) {
+  nav.navbar{
+    .navbar-item{
+      padding: 1em;
     }
   }
 }

@@ -218,6 +218,9 @@ body #terminalEditor {
   bottom: 0;
   width: 100%;
 }
+body #terminalEditor::-webkit-scrollbar {
+  display: none;
+}
 body .pointer {
   display: inline-block;
   background-color: rgb(244, 244, 244);
@@ -384,6 +387,48 @@ body section.home-intro img {
 body section.home-intro > div {
   flex-grow: 2;
 }
+body section.home-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section.home-subscribe a {
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+  /*width: 267px;
+  display: block;*/
+}
+body section.home-subscribe a div {
+  display: block;
+}
+body section.home-subscribe a div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+body section.home-subscribe a div:nth-child(2) p {
+  padding: 0;
+}
+body section.home-subscribe a div:nth-child(2) p:not(.side) {
+  flex-basis: 99%;
+  flex-grow: 2;
+  text-align: center;
+}
+body section.home-subscribe a div:nth-child(2) p.side {
+  flex-shrink: 2;
+}
+body section.home-subscribe a div:nth-child(2) p.side:last-child {
+  text-align: right;
+}
+body section.home-subscribe a span {
+  display: none;
+}
+body section.home-subscribe a:hover span {
+  display: inline-block;
+}
 body section.building {
   display: flex;
   align-items: center;
@@ -452,8 +497,31 @@ body section.building div a:hover span {
   #home .building {
     flex-direction: column;
   }
+  #home .building .navbar-item {
+    margin-top: 0;
+    padding-top: 0;
+  }
   #home .building > p {
     text-align: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #terminalEditor {
+    display: none;
+  }
+}
+@media screen and (max-width: 612px) {
+  #home .building .homeActions {
+    display: flex;
+    flex-direction: column;
+  }
+  #home .building .homeActions .navbar-item {
+    margin: unset;
+  }
+}
+@media screen and (max-width: 556px) {
+  nav.navbar .navbar-item {
+    padding: 1em;
   }
 }
 @keyframes blink-animation {

@@ -13,12 +13,13 @@ const CommandLine = () => {
   const commands = {
     whoami: "jackharper",
     //cd: (directory) => `changed path to ${directory}`
-    cd: (path) => path !== 'home' ? navigate('/'+path) : navigate('/'),
+    cd: (path) => path !== 'home' && path !== 'subscribe' ? navigate('/'+path) : ( path !== 'subscribe' ? navigate('/') : window.location.replace('https://194f384b.sibforms.com/serve/MUIFAIKyVXuwU_3zwEsAWhAEVpQKwfLDf9-O6Qyr0VyjfW1bYN9LpmHp7Jf9NLjIivYWIeOQylYqBqp69tnhbqTn_1bQbUbcYRa3kqjdlm8adgu6_-Iw5kMvLORgvELqQFX94PN7PS7-g_dJyvHbLegf6BOzDmzIPjwW6Z-FztPnBq8YuhpXmJGV-Qj2-RtQSVvAQw6fEIk7KtLP')),
     ls: ()=> <div>
       <p>home</p>
       <p>about</p>
       <p>projects</p>
       <p>contact</p>
+      <p>subscribe</p>
     </div>,
     pokemon: async (pokemon)=>{
       const poke = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((res)=>{
@@ -55,7 +56,7 @@ const CommandLine = () => {
     </div>
   };
   return(
-    <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/>
+    <ReactTerminal className="scrollbar-hidden" id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/>
   )
 }
 
