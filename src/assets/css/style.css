@@ -292,17 +292,17 @@ body #welcome-container {
 body #projects-container > div {
   display: flex;
   flex-direction: column;
+  /*span{
+    font-size: 2rem;
+    &.pointer{
+      height:2rem;
+      background-color:$terminal-green
+    }
+  }*/
 }
 body #projects-container > div > p {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-body #projects-container > div span {
-  font-size: 2rem;
-}
-body #projects-container > div span.pointer {
-  height: 2rem;
-  background-color: rgb(20, 210, 118);
 }
 body .intro-titles h3 {
   color: rgb(153, 153, 153);
@@ -386,6 +386,45 @@ body section.home-intro img {
 }
 body section.home-intro > div {
   flex-grow: 2;
+}
+body #projects-container #toContent {
+  display: flex;
+  justify-content: center;
+}
+body #projects-container #toContent a {
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+}
+body #projects-container #toContent a div {
+  display: block;
+}
+body #projects-container #toContent a div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+body #projects-container #toContent a div:nth-child(2) p {
+  padding: 0;
+}
+body #projects-container #toContent a div:nth-child(2) p:not(.side) {
+  flex-basis: 99%;
+  flex-grow: 2;
+  text-align: center;
+}
+body #projects-container #toContent a div:nth-child(2) p.side {
+  flex-shrink: 2;
+}
+body #projects-container #toContent a div:nth-child(2) p.side:last-child {
+  text-align: right;
+}
+body #projects-container #toContent a span {
+  display: none;
+}
+body #projects-container #toContent a:hover span {
+  display: inline-block;
 }
 body section.home-subscribe {
   display: flex;

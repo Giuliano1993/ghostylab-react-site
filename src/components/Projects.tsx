@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import TerminalButton from "./elements/TerminalButton.tsx";
 
 const Projects = () => {
   const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
@@ -36,13 +37,18 @@ const Projects = () => {
   return (
     <div id="projects-container" className="container">
        <div>
-        <p>I like develop small fun projects to share. Here you won't probably find my work stuff, but i can show you my skill while having fun with code</p>
-        <p>If you propose me a fun and interesting project, you can be sure I will deliver it in the most positive and committed attitude, check these small works of mine, what do you think? </p>
+        <p>I love develop small funny projects to share.</p>
+        <p> Here you won't probably find my work stuff, but i can show you my skill while having fun with code</p>
+        <p>This page is still under construction, but while you wait for the coding projects, why don't you take a look at the coding contents? </p>
+        <div id="toContent">
+          <TerminalButton text="My articles on Dev.to"  href={"https://dev.to/giuliano1993"}/>
+          <TerminalButton text="My LinkedIn profile"  href={"https://www.linkedin.com/in/giuliano-gostinfini/"}/>
+        </div>
       
-        <div>
+        {/* <div>
           <span id="comingSoonText"></span>
           <span className="pointer"></span>
-        </div>
+        </div> */}
         
       </div> 
       {
