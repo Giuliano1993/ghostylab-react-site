@@ -6,7 +6,7 @@ import Projects from './Projects.tsx'
 import Contact from './Contact.tsx'
 import Error404 from './Error404.tsx'
 import CommandLine from './CommandLine'
-import { ConfirmSubscription } from "./ConfirSubscription.tsx";
+import ConfirmSubscription from "./ConfirmSubscription.tsx";
 //import Newsletter from "./Newsletter.tsx";
 const Navbar = ()=>{
   
