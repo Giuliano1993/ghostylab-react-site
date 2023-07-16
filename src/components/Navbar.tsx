@@ -12,7 +12,14 @@ const Navbar = ()=>{
   
   return (
     <>
+    
+    <input type="checkbox" id="openCloseMenu" name="openCloseMenu" />
     <nav className="navbar is-primary" role="navigation">
+      <label htmlFor="openCloseMenu" id="openCloseLabel" aria-label="open-responsive-menu" role="button">
+        -<br/>
+        -<br/>
+        -<br/>
+      </label>
       <NavLink className="navbar-item" to="/" >
         Home
       </NavLink>

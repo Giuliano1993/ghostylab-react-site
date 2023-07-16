@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TerminalButton from "./elements/TerminalButton.tsx";
 import labImg from '../assets/pics/LAB_TAB.png'
 
 const Projects = () => {
-  const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+  /*const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
   useEffect(()=>{
     write()
   })
@@ -33,7 +33,7 @@ const Projects = () => {
     } catch (err) {
       console.error(err)
     }
-  }
+  }*/
 
   return (
     <div id="projects-container" className="container">
