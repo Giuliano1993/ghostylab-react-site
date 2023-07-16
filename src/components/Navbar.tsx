@@ -1,4 +1,4 @@
-import React  from "react";
+import React, {useState}  from "react";
 import { NavLink, Routes, Route } from "react-router-dom";
 import Home from './Home.tsx'
 import {About} from './About.tsx'
@@ -9,30 +9,35 @@ import CommandLine from './CommandLine'
 import ConfirmSubscription from "./ConfirmSubscription.tsx";
 //import Newsletter from "./Newsletter.tsx";
 const Navbar = ()=>{
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+  const switchMenuOpen = ()=>{
+    setMenuOpen(!menuOpen);
+  }
+
+
+
   return (
     <>
-    
-    <input type="checkbox" id="openCloseMenu" name="openCloseMenu" />
+    <input type="checkbox" id="openCloseMenu" name="openCloseMenu" checked={menuOpen}/>
     <nav className="navbar is-primary" role="navigation">
-      <label htmlFor="openCloseMenu" id="openCloseLabel" aria-label="open-responsive-menu" role="button">
+      <button id="openCloseLabel" aria-label="open-responsive-menu"  onClick={switchMenuOpen}>
         -<br/>
         -<br/>
         -<br/>
-      </label>
-      <NavLink className="navbar-item" to="/" >
+      </button>
+      <NavLink onClick={switchMenuOpen} className="navbar-item" to="/" >
         Home
       </NavLink>
-      <NavLink className="navbar-item" to="/about" >
+      <NavLink onClick={switchMenuOpen} className="navbar-item" to="/about" >
         About
       </NavLink>
-      <NavLink className="navbar-item" to="/projects" >
+      <NavLink onClick={switchMenuOpen} className="navbar-item" to="/projects" >
         Projects
       </NavLink>
-      <NavLink className="navbar-item" to="/contact" >
+      <NavLink onClick={switchMenuOpen} className="navbar-item" to="/contact" >
         Contact
       </NavLink>
-      <NavLink className="navbar-item" to="https://194f384b.sibforms.com/serve/MUIFAIKyVXuwU_3zwEsAWhAEVpQKwfLDf9-O6Qyr0VyjfW1bYN9LpmHp7Jf9NLjIivYWIeOQylYqBqp69tnhbqTn_1bQbUbcYRa3kqjdlm8adgu6_-Iw5kMvLORgvELqQFX94PN7PS7-g_dJyvHbLegf6BOzDmzIPjwW6Z-FztPnBq8YuhpXmJGV-Qj2-RtQSVvAQw6fEIk7KtLP" >
+      <NavLink onClick={switchMenuOpen} className="navbar-item" to="https://194f384b.sibforms.com/serve/MUIFAIKyVXuwU_3zwEsAWhAEVpQKwfLDf9-O6Qyr0VyjfW1bYN9LpmHp7Jf9NLjIivYWIeOQylYqBqp69tnhbqTn_1bQbUbcYRa3kqjdlm8adgu6_-Iw5kMvLORgvELqQFX94PN7PS7-g_dJyvHbLegf6BOzDmzIPjwW6Z-FztPnBq8YuhpXmJGV-Qj2-RtQSVvAQw6fEIk7KtLP" >
         Subscribe
       </NavLink>
     </nav>

@@ -746,7 +746,9 @@ body{
     }
     .navbar.is-primary{
       justify-content: center;
-      label{
+      button{
+        background-color: $terminal-black;
+        color: $terminal-white;
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: center;

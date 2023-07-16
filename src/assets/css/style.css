@@ -686,7 +686,9 @@ body section.building div a:hover span {
   body .navbar.is-primary {
     justify-content: center;
   }
-  body .navbar.is-primary label {
+  body .navbar.is-primary button {
+    background-color: rgb(30, 30, 30);
+    color: rgb(244, 244, 244);
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
