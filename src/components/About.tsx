@@ -34,8 +34,8 @@ export const About = () => {
 
   const skillsRows: JSX.Element[] = []
 
-  skills.forEach((el)=>{
-    skillsRows.push(<SkillBox skill={el}></SkillBox>);
+  skills.forEach((el,i)=>{
+    skillsRows.push(<SkillBox skill={el} key={i}></SkillBox>);
   })
   return(
     <div className="about-page container">

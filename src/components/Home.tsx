@@ -16,7 +16,7 @@ const Home = () => {
             <h3>{"/* And this is my lab */"}</h3>
           </div>
             </section>
-            <section className="building">
+            <section className="building" aira-label="Introductive description of what i do">
           <p>
             Hi, I'm a freelance full-stack web developer based in Rome. <br/>
             I develop websites and web apps as well as command line and automation tools and flows.<br/>

@@ -703,6 +703,7 @@ body section.building div a:hover span {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(30, 30, 30);
   }
   body #openCloseMenu:checked + .navbar.is-primary a {
     display: block;
@@ -718,6 +719,9 @@ body section.building div a:hover span {
   }
   body #home .home-intro div {
     width: 100%;
+  }
+  body #projects-container > div {
+    z-index: -99999999999;
   }
 }
 @keyframes blink-animation {

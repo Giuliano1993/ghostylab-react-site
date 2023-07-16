@@ -764,6 +764,7 @@ body{
       display: flex;
       align-items: center;
       flex-direction: column;
+      background-color: $terminal-black;
       a{
         display: block;
         border-top: 1px solid $terminal-white;
@@ -782,6 +783,11 @@ body{
         }
       }
     } 
+    #projects-container{
+      &>div{
+        z-index: -99999999999;
+      }
+    }
   }
 }
 
