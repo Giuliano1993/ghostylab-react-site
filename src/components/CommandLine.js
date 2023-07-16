@@ -22,9 +22,10 @@ const CommandLine = () => {
       <p>subscribe</p>
     </div>,
     pokemon: async (pokemon)=>{
-      const poke = await axios(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((res)=>{
+      const poke = await axios(`https://pokeapi.co/api/v2/pokemon?limit=151`).then((res)=>{
         console.log(res.data)
-        return res.data
+        const random_number = Math.floor(Math.random() * 150); //Bettween 0 and 19
+        return res.data.results[random_number]
       })
       return <div>{poke.name}</div>
     },

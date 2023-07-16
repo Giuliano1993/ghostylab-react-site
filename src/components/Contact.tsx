@@ -107,6 +107,7 @@ const Contact = ()=>{
   return(
 
     <div className="container" id="contacts">
+      <h1>Contact me</h1>
       <p>
         Did youn like my small lab? You want to start a conversation about coding? You want to hire me for some project or at least ask for an estimate? You can write me directly here, i will contact you asap ;) If you prefer to reach out on social media, here you can also find links to connect 
       </p>

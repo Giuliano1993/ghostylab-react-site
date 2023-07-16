@@ -40,6 +40,9 @@ body{
       display: flex;
       align-items: center;
       height: calc(100vh - 251px);
+      h1{
+        margin: 15px auto;
+      }
       &#home{
         flex-direction: column;
       }
@@ -152,6 +155,7 @@ body{
     #contacts {
       flex-direction: column;
       padding-top: 30px;
+      
       #contact_line{
         display: flex;
         margin-top: 30px;
@@ -476,6 +480,11 @@ body{
       }
     }
     #projects-container{
+      img{
+        width: 300px;
+        align-self: center;
+        z-index: -9999999;
+      }
       #toContent{
         display: flex;
         justify-content: center;
@@ -648,16 +657,68 @@ body{
 }
 
 
-
-@media screen and (max-width: 612px) {
-  #home{
-    .building{
-      .homeActions{
-        display: flex;
-        flex-direction: column;
-        .navbar-item{
-          margin: unset;
+@media screen and (max-width: 920px) {
+  body{
+    .container.about-page{
+      flex-direction: column;
+      .aboutText{
+        width: 100%;
+      }
+      #skills{
+        //width: 90%;
+        h2{
+          text-align: left;
         }
+      }
+    }
+    #projects-container{
+      img{
+        width: 200px;
+        margin-bottom: 20px;
+      }
+      #toContent{
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+        a{
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 612px) {
+  body{
+    #home{
+      .building{
+        .homeActions{
+          display: flex;
+          flex-direction: column;
+          .navbar-item{
+            margin: unset;
+          }
+        }
+      }
+    }
+    #contacts{
+      #contact_line{
+        flex-direction: column;
+        &>div{
+          margin-left: 0!important;
+          margin-right: 0!important;
+        }
+        /*&>div:last-child>div{
+          flex-direction: row;
+          flex-wrap: wrap;
+          a{
+            flex-basis: 50%;
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }*/
       }
     }
   }
