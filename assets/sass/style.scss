@@ -33,6 +33,12 @@ body{
     background-color: rgb(30,30,30);
     color: $terminal-white;
     font-family: 'Inconsolata', monospace;
+    #openCloseMenu{
+      display: none;
+    }
+    #openCloseLabel{
+      display: none;
+    }
     .container{
       width:90%;
       max-width: 1200px;
@@ -730,6 +736,56 @@ body{
     }
   }
 }
+
+/* phone */
+@media screen and (max-width: 500px) {
+  body{
+    #openCloseLabel{
+      display: block;
+      line-height: 30%;
+    }
+    .navbar.is-primary{
+      justify-content: center;
+      label{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 40px;
+        border: 1px solid $terminal-white;
+        border-radius: 10px;
+      }
+      a{
+        display: none;
+      }
+    }
+    #openCloseMenu:checked + .navbar.is-primary{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      a{
+        display: block;
+        border-top: 1px solid $terminal-white;
+        width: 100%;
+        text-align: center;
+        &::after{
+          float: none;
+        }
+      }
+    }
+    #home{
+      .home-intro{
+        flex-direction: column;
+        div{
+          width: 100%;
+        }
+      }
+    } 
+  }
+}
+
+
 
 @keyframes blink-animation {
     to {

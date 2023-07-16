@@ -20,6 +20,12 @@ body {
   color: rgb(244, 244, 244);
   font-family: "Inconsolata", monospace;
 }
+body #openCloseMenu {
+  display: none;
+}
+body #openCloseLabel {
+  display: none;
+}
 body .container {
   width: 90%;
   max-width: 1200px;
@@ -669,6 +675,49 @@ body section.building div a:hover span {
 @media screen and (max-width: 556px) {
   nav.navbar .navbar-item {
     padding: 1em;
+  }
+}
+/* phone */
+@media screen and (max-width: 500px) {
+  body #openCloseLabel {
+    display: block;
+    line-height: 30%;
+  }
+  body .navbar.is-primary {
+    justify-content: center;
+  }
+  body .navbar.is-primary label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 40px;
+    border: 1px solid rgb(244, 244, 244);
+    border-radius: 10px;
+  }
+  body .navbar.is-primary a {
+    display: none;
+  }
+  body #openCloseMenu:checked + .navbar.is-primary {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  body #openCloseMenu:checked + .navbar.is-primary a {
+    display: block;
+    border-top: 1px solid rgb(244, 244, 244);
+    width: 100%;
+    text-align: center;
+  }
+  body #openCloseMenu:checked + .navbar.is-primary a::after {
+    float: none;
+  }
+  body #home .home-intro {
+    flex-direction: column;
+  }
+  body #home .home-intro div {
+    width: 100%;
   }
 }
 @keyframes blink-animation {
