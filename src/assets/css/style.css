@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+#root {
+  overflow-y: auto;
+}
+#root::-webkit-scrollbar {
+  width: 5px;
+}
+#root::-webkit-scrollbar-track {
+  background: rgb(30, 30, 30); /* color of the tracking area */
+}
+#root::-webkit-scrollbar-thumb {
+  background-color: rgb(20, 210, 118); /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+}
+
 .aboutText {
   width: 60%;
 }
@@ -42,6 +56,28 @@ body .container#home {
 }
 body .container#error h2 {
   text-align: center;
+}
+body #latest-articles {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+}
+body #latest-articles h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+body #latest-articles .article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 5px;
+  flex-basis: 30%;
+  border: 1px solid rgb(244, 244, 244);
+}
+body #latest-articles .article a:visited {
+  color: rgb(244, 244, 244);
 }
 body #subscribe > div {
   margin-left: 20px;
@@ -399,6 +435,9 @@ body nav {
   display: flex;
   border-bottom: rgb(244, 244, 244) solid 1px;
   justify-content: flex-end;
+  background-color: rgb(30, 30, 30);
+  position: sticky;
+  top: 0;
 }
 body nav a {
   text-decoration: none;
@@ -619,6 +658,9 @@ body section.building div a:hover span {
 @media screen and (max-width: 1024px) {
   #terminalEditor {
     display: none;
+  }
+  #root {
+    overflow-y: visible;
   }
 }
 @media screen and (max-width: 920px) {

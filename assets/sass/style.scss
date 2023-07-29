@@ -17,6 +17,20 @@ $terminal-black: rgb(30,30,30);
   margin: 0;
   box-sizing: border-box;
 }
+#root {
+  overflow-y: auto;
+  &::-webkit-scrollbar{
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $terminal-black;        /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $terminal-green;    /* color of the scroll thumb */
+    border-radius: 10px;       /* roundness of the scroll thumb */
+    //border: 3px solid $terminal-white;  /* creates padding around scroll thumb */
+  }
+}
 .aboutText{
   width: 60%;
   p{
@@ -55,6 +69,30 @@ body{
       &#error{
         h2{
           text-align: center;
+        }
+      }
+    }
+    #latest-articles{
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 40px;
+      flex-wrap: wrap;
+      h2{
+        flex-basis: 100%;
+        text-align: center;
+        margin: 20px auto;
+      }
+      .article{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 5px;
+        flex-basis:30%;
+        border: 1px solid $terminal-white;
+        a{
+          &:visited{
+            color: $terminal-white;
+          }
         }
       }
     }
@@ -400,6 +438,7 @@ body{
         margin-top: 10px;
         margin-bottom: 10px;
       }
+      
       /*span{
         font-size: 2rem;
         &.pointer{
@@ -438,6 +477,9 @@ body{
       display: flex;
       border-bottom: rgba(244,244,244) solid 1px;
       justify-content: flex-end;
+      background-color: $terminal-black;
+      position: sticky;
+      top: 0;
       a{
         text-decoration: none;
         padding: 1em 1.5em;
@@ -659,6 +701,9 @@ body{
 @media screen and (max-width: 1024px) {
   #terminalEditor{
     display: none;
+  }
+  #root{
+    overflow-y: visible;
   }
 }
 
