@@ -21,19 +21,28 @@ const CommandLine = () => {
       <p>contact</p>
       <p>subscribe</p>
     </div>,
-    pokemon: async (pokemon)=>{
+    pokemon: async ()=>{
       const poke = await axios(`https://pokeapi.co/api/v2/pokemon?limit=151`).then((res)=>{
-        console.log(res.data)
-        const random_number = Math.floor(Math.random() * 150); //Bettween 0 and 19
+        const random_number = Math.floor(Math.random() * 150); 
         return res.data.results[random_number]
+      }).then(async (res)=>{
+        return await axios(res.url).then((res)=>res.data)
       })
-      return <div>{poke.name}</div>
+      console.log(poke)
+      return <div> <img src={poke.sprites.front_default} alt="Front of poke"/><span>{poke.name}</span></div>
+    },
+    articles: async ()=>{
+      const articles = await axios.get("https://dev.to/api/articles?username=giuliano1993&per_page=3").then((res)=>{
+        return res.data
+      })
+      return articles.map((a)=><div><a href={a.url}>{a.title}</a></div>)
     },
     help: <div>
         <p><b>CD </b> prompt:  go to this page</p>
         <p><b>ls </b>: lists the available paths</p>
         <p><b>clear </b>: empty the terminal</p>
         <p><b>skills </b>: show a short list of my skills</p>
+        <p><b>articles </b>: show the links to my most recent articles</p>
       </div>,
     skills: <div>
       <div>
