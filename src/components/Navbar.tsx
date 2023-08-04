@@ -7,7 +7,7 @@ import Contact from './Contact.tsx'
 import Error404 from './Error404.tsx'
 import CommandLine from './CommandLine'
 import ConfirmSubscription from "./ConfirmSubscription.tsx";
-//import Newsletter from "./Newsletter.tsx";
+
 const Navbar = ()=>{
   const [menuOpen, setMenuOpen] = useState(false);
   const switchMenuOpen = ()=>{
@@ -48,7 +48,6 @@ const Navbar = ()=>{
         <Route path='/projects' element={<Projects/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/confirm-subscription' element={<ConfirmSubscription/>} />
-        {/* <Route path='/subscribe' element={<Newsletter/>} /> */}
         <Route path="*" element={<Error404 />} />
     </Routes>
     {/* <ReactTerminal id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/> */}

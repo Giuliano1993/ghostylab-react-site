@@ -1,6 +1,7 @@
 import React from "react";
 import photo from  '../assets/pics/thisisme.jpeg'
 import TerminalButton from "./elements/TerminalButton.tsx";
+import DevLatestArticles from "./elements/DevLatestArticles.tsx";
 
 const Home = () => { 
  
@@ -29,12 +30,7 @@ const Home = () => {
             <TerminalButton href="/contact"  text="Contact me"></TerminalButton>
           </div>
         </section>
-        {/* <section className="home-subscribe">
-            <p>If you're a developer and would have some inspiration to start your coding week, I send a newsletter every Monday morning at 9, with a 3-5mins read with tool, projects ideas, short articles and resources. Consider to subscribe to kickstart your week</p>
-            <div>
-            <TerminalButton href="https://194f384b.sibforms.com/serve/MUIFAIKyVXuwU_3zwEsAWhAEVpQKwfLDf9-O6Qyr0VyjfW1bYN9LpmHp7Jf9NLjIivYWIeOQylYqBqp69tnhbqTn_1bQbUbcYRa3kqjdlm8adgu6_-Iw5kMvLORgvELqQFX94PN7PS7-g_dJyvHbLegf6BOzDmzIPjwW6Z-FztPnBq8YuhpXmJGV-Qj2-RtQSVvAQw6fEIk7KtLP"  text="Subscribe"></TerminalButton>
-            </div>
-        </section> */}
+          {/* <DevLatestArticles/> */}
     </div>
   </>);
 }
