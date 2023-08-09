@@ -478,6 +478,7 @@ body{
       border-bottom: rgba(244,244,244) solid 1px;
       justify-content: flex-end;
       background-color: $terminal-black;
+      z-index: 999999;
       position: sticky;
       top: 0;
       a{
