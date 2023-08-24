@@ -32,7 +32,7 @@ const CommandLine = () => {
       return <div> <img src={poke.sprites.front_default} alt="Front of poke"/><span>{poke.name}</span></div>
     },
     articles: async ()=>{
-      const articles = await axios.get("https://dev.to/api/articles?username=giuliano1993&per_page=3").then((res)=>{
+      const articles = await axios.get("https://dev.to/api/articles?username=giuliano1993&per_page=5").then((res)=>{
         return res.data
       })
       return articles.map((a)=><div><a href={a.url}>{a.title}</a></div>)
