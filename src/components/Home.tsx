@@ -1,7 +1,6 @@
 import React from "react";
 import photo from  '../assets/pics/thisisme.jpeg'
 import TerminalButton from "./elements/TerminalButton.tsx";
-import DevLatestArticles from "./elements/DevLatestArticles.tsx";
 
 const Home = () => { 
  
@@ -30,7 +29,7 @@ const Home = () => {
             <TerminalButton href="/contact"  text="Contact me"></TerminalButton>
           </div>
         </section>
-          {/* <DevLatestArticles/> */}
+          
     </div>
   </>);
 }
