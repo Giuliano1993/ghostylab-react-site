@@ -2,9 +2,17 @@ import { useNavigate } from "react-router-dom";
 import { ReactTerminal } from "react-terminal";
 import { skills } from "./About.tsx";
 import axios from "axios";
+import { useRef } from "react";
 const CommandLine = () => {
   const navigate  = useNavigate();
 
+  const terminalReference = useRef(null);
+
+  const toggleTerminal = ()=>{
+
+    const terminalContainer = terminalReference.current;
+    terminalContainer.classList.toggle('force-show')
+  }
   const skillsRows = []
   skills.forEach((el)=>{
     skillsRows.push(<div key={el}>{el}</div>);
@@ -66,7 +74,13 @@ const CommandLine = () => {
     </div>
   };
   return(
-    <ReactTerminal className="scrollbar-hidden" id="terminal" commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/>
+    <div ref={terminalReference}>
+    <div id="terminalToggler" onClick={toggleTerminal}>
+      Toggle Terminal
+    </div>
+      <ReactTerminal className="scrollbar-hidden" id="terminal"  commands={commands} showControlBar={false} theme={"matrix"} prompt={">"} welcomeMessage={<p>Type help to check the available commands<br/></p>}/>
+    </div>
+    
   )
 }
 

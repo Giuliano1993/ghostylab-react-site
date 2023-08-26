@@ -641,6 +641,10 @@ body section.building div a:hover span {
   animation: scale-out-horizontal 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
+#terminalToggler {
+  display: none;
+}
+
 @media screen and (max-width: 1330px) {
   .d-lg-none {
     display: inline;
@@ -660,6 +664,23 @@ body section.building div a:hover span {
   #terminalEditor {
     display: none;
   }
+  #terminalToggler {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: rgb(20, 210, 118);
+    padding: 5px 10px;
+    border: 1px solid rgb(20, 210, 118);
+    background-color: rgb(30, 30, 30);
+    cursor: pointer;
+  }
+  .force-show #terminalToggler {
+    bottom: 200px;
+  }
+  .force-show #terminalEditor {
+    display: block;
+  }
   #root {
     overflow-y: visible;
   }
@@ -667,6 +688,7 @@ body section.building div a:hover span {
 @media screen and (max-width: 920px) {
   body .container.about-page {
     flex-direction: column;
+    height: 100%;
   }
   body .container.about-page .aboutText {
     width: 100%;

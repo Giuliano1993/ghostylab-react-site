@@ -681,6 +681,7 @@ body{
 	-webkit-animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	        animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+#terminalToggler{display: none;}
 
 @media screen and (max-width: 1330px) {
   .d-lg-none{
@@ -703,6 +704,28 @@ body{
   #terminalEditor{
     display: none;
   }
+  #terminalToggler{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: $terminal-green;
+    padding: 5px 10px;
+    border: 1px solid $terminal-green;
+    background-color: $terminal-black;
+    cursor: pointer;
+
+
+  }
+  .force-show{
+    #terminalToggler{
+      bottom:200px
+    }
+    #terminalEditor{
+      display: block;
+    }
+  }
+
   #root{
     overflow-y: visible;
   }
@@ -713,6 +736,7 @@ body{
   body{
     .container.about-page{
       flex-direction: column;
+      height: 100%;
       .aboutText{
         width: 100%;
       }
