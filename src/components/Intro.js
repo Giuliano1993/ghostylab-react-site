@@ -13,7 +13,7 @@ const Intro = () => {
     if(!introduced && location.pathname === '/'){
       document.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-          document.getElementById('welcome-container').classList.add('scale-out-horizontal')
+          document.getElementById('welcome-container')?.classList.add('scale-out-horizontal')
           setTimeout(() => {
             setIntroduced(true);
             window.localStorage.setItem('introduced',true)
@@ -22,7 +22,7 @@ const Intro = () => {
         }
       })
       document.addEventListener('click', function (e) {
-          document.getElementById('welcome-container').classList.add('scale-out-horizontal')
+          document.getElementById('welcome-container')?.classList.add('scale-out-horizontal')
           setTimeout(() => {
             setIntroduced(true);
             window.localStorage.setItem('introduced',true)  
