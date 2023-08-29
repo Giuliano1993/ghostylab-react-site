@@ -109,7 +109,11 @@ const Contact = ()=>{
     <div className="container" id="contacts">
       <h1>Contact me</h1>
       <p>
-        Did youn like my small lab? You want to start a conversation about coding? You want to hire me for some project or at least ask for an estimate? You can write me directly here, i will contact you asap ;) If you prefer to reach out on social media, here you can also find links to connect 
+        Did youn like my small lab? You want to start a conversation about coding? 
+        You want to hire me for some project or at least ask for an estimate? 
+        You need a mentor to guide you through the path of being a developer? 
+        You can write me directly here, i will contact you ASAP ;) 
+        If you prefer to reach out on social media, here you can also find links to connect 
       </p>
       <div id="contact_line">
         <div>
