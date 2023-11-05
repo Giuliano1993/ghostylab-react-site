@@ -40,10 +40,10 @@ const CommandLine = () => {
       return <div> <img src={poke.sprites.front_default} alt="Front of poke"/><span>{poke.name}</span></div>
     },
     articles: async ()=>{
-      const articles = await axios.get("https://dev.to/api/articles?username=giuliano1993&per_page=5").then((res)=>{
+      const articles = await axios.get("https://dev.to/api/articles?username=giuliano1993&per_page=20").then((res)=>{
         return res.data
       })
-      return articles.map((a)=><div><a href={a.url}>{a.title}</a></div>)
+      return articles.filter((a)=>a.collection_id !== 25147).map((a)=><div><a href={a.url}>{a.title}</a></div>)
     },
     help: <div>
         <p><b>CD </b> prompt:  go to this page</p>
